@@ -14,10 +14,8 @@ WORKDIR /app
 # Copy backend source
 COPY . .
 
-# Install PHP dependencies and optimise the app
-RUN composer install --no-dev --optimize-autoloader \
-    && php artisan key:generate --force \
-    && php artisan config:cache
+# Install PHP dependencies (further optimisation can run at runtime once env vars exist)
+RUN composer install --no-dev --optimize-autoloader
 
 # Expose application port (Render injects PORT env variable)
 CMD php artisan serve --host=0.0.0.0 --port=${PORT:-8000}
