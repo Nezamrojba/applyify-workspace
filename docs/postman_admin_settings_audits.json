@@ -1,0 +1,32 @@
+{
+  "info": {
+    "name": "Admin Settings & Audits",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "event": [
+    {"listen":"prerequest","script":{"type":"text/javascript","exec":["pm.request.headers.upsert({ key: 'Accept', value: 'application/json' });"]}}
+  ],
+  "item": [
+    {
+      "name": "Admin: Get Settings",
+      "request": {"method":"GET","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"}],"url":{"raw":"{{base_url}}/api/admin/settings","host":["{{base_url}}"],"path":["api","admin","settings"]}}
+    },
+    {
+      "name": "Admin: Set Points & Limits",
+      "request": {"method":"POST","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{base_url}}/api/admin/settings","host":["{{base_url}}"],"path":["api","admin","settings"]},"body":{"mode":"raw","raw":"{\n  \"student.max_active_apps\": 3,\n  \"staff.max_active_assignments\": 5,\n  \"applications.enabled_for_students\": true,\n  \"applications.enabled_for_staff\": true,\n  \"points.total\": 100,\n  \"points.distribution\": {\n    \"mol\": 30,\n    \"eval\": 30,\n    \"visa\": 40\n  },\n  \"points.rate\": 0.5\n}"}}
+    },
+    {
+      "name": "Admin: Audits",
+      "request": {"method":"GET","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"}],"url":{"raw":"{{base_url}}/api/admin/audits?entity_type=application","host":["{{base_url}}"],"path":["api","admin","audits"],"query":[{"key":"entity_type","value":"application"}]}}
+    },
+    {
+      "name": "Admin: Metrics",
+      "request": {"method":"GET","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"}],"url":{"raw":"{{base_url}}/api/admin/metrics","host":["{{base_url}}"],"path":["api","admin","metrics"]}}
+    }
+  ],
+  "variable": [
+    {"key":"base_url","value":"http://localhost:8000"},
+    {"key":"admin_token","value":""}
+  ]
+}
+

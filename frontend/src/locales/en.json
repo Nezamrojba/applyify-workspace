@@ -1,0 +1,830 @@
+{
+  "app": {
+    "title": "Student Apply"
+  },
+  "nav": {
+    "universities": "Universities",
+    "applications": "Applications",
+    "login": "Login"
+  },
+  "header": {
+    "admin": "Admin",
+    "myAccount": "My Account",
+    "ask": "Ask an advisor"
+  },
+  "common": {
+    "menu": "Menu",
+    "loading": "Loading...",
+    "loadingData": "Loading data...",
+    "refresh": "Refresh",
+    "view": "View",
+    "viewAll": "View All",
+    "viewDetails": "View details",
+    "browseCourses": "Browse Courses",
+    "actionRequired": "Action Required",
+    "reviewApplications": "Review Applications",
+    "yes": "Yes",
+    "no": "No",
+    "back": "Back",
+    "continue": "Continue",
+    "continueToPayment": "Continue to Payment",
+    "checking": "Checking...",
+    "confirmCloseReceipt": "You have uploaded a payment receipt. Are you sure you want to close? Your application will not be created.",
+    "accountNumberCopied": "Account number copied to clipboard",
+    "copy": "Copy",
+    "remove": "Remove",
+    "name": "Name",
+    "email": "Email",
+    "passport": "Passport Number",
+    "student": "Student",
+    "staff": "Staff",
+    "superAdmin": "Super Admin",
+    "moduleDisabled": "Module disabled",
+    "unknown": "Unknown"
+  },
+  "landing": {
+    "hero": {
+      "badge": "Malaysia made simple",
+      "title": "Your guided path to studying in Malaysia starts here",
+      "subtitle": "Discover universities, complete every requirement, and land with confidence. We keep students energized and parents reassured the entire way.",
+      "ctaPrimary": "Explore the catalog",
+      "ctaSecondary": "Start an application",
+      "stats": {
+        "title": "Visa approvals",
+        "value": "97% success",
+        "subtitle": "with our end-to-end document review"
+      },
+      "snapshot": {
+        "title": "Application snapshot",
+        "copy": "Payment status, stage progress, and staff feedback are visible in one dashboard."
+      },
+      "timeline": {
+        "title": "Average processing",
+        "value": "21 days to university offer",
+        "tag": "Fast turnaround"
+      },
+      "support": {
+        "title": "Dedicated support",
+        "copy": "Our multilingual team works with parents and students from the first consultation to the airport pickup."
+      }
+    },
+    "value": {
+      "badge": "Why families choose us",
+      "title": "A smarter admissions journey for parents and ambitious students",
+      "description": "We combine expert human consultants with modern automation so students stay motivated and parents stay informed.",
+      "highlights": {
+        "parents": {
+          "title": "Every document verified",
+          "copy": "We structure each stage with clear deadlines, upload reminders, and staff review notes."
+        },
+        "students": {
+          "title": "Personalized recommendations",
+          "copy": "Match with courses that fit your interests, budget, and acceptance probability."
+        },
+        "tracking": {
+          "title": "Always in the loop",
+          "copy": "In-app notifications, WhatsApp prompts, and email summaries bring clarity to every stakeholder."
+        }
+      }
+    },
+    "catalog": {
+      "badge": "Discover leading universities",
+      "title": "Curated programs for every ambition",
+      "description": "Filter by acceptance rates, course keywords, and tuition bands to find programs that match your academic profile.",
+      "filters": {
+        "title": "Refine your matches",
+        "hint": "Search by course name and adjust the acceptance slider to see universities that fit your confidence zone.",
+        "empty": "No courses match your filters yet. Try widening the acceptance range or clearing your search."
+      }
+    },
+    "journey": {
+      "badge": "Your journey with Applyify",
+      "title": "Three simple steps to land in Malaysia",
+      "description": "We blend expert humans and smart automations to keep momentum high and stress low.",
+      "steps": [
+        {
+          "title": "Explore & apply",
+          "copy": "Browse curated programs, consult with our advisors, and upload your payment receipt to kickstart your application."
+        },
+        {
+          "title": "Track every milestone",
+          "copy": "Our staff reviews each document, communicates inside the portal, and keeps parents informed with real-time updates."
+        },
+        {
+          "title": "Arrive ready for class",
+          "copy": "Airport pickup, hostel settling, and orientation reminders help you feel at home from day one."
+        }
+      ]
+    },
+    "applySuccessRedirect": "Application created successfully! Redirecting to application details...",
+    "applySuccess": "Application created successfully! Your payment is being reviewed. We will notify you once it's approved.",
+    "applyError": "Failed to create application",
+    "filters": {
+      "anyAcceptance": "Any %",
+      "fiftyPlus": "50%+",
+      "sixtyPlus": "60%+",
+      "seventyPlus": "70%+",
+      "eightyPlus": "80%+",
+      "ninetyPlus": "90%+"
+    },
+    "courseBlurb": "{level} • {months} months • {name}"
+  },
+  "auth": {
+    "loginTitle": "Login",
+    "createAccountTitle": "Create Account",
+    "newHere": "New here? Create account",
+    "hintPassport": "We need your passport to make your application. It’s safe."
+  },
+  "fields": {
+    "name": "Full name",
+    "email": "Email",
+    "whatsapp": "WhatsApp number",
+    "passport": "Passport number",
+    "password": "Password",
+    "confirmPassword": "Confirm password"
+  },
+  "universities": {
+    "searchCourse": "Search course",
+    "acceptance": "Acceptance",
+    "acceptanceHelp": "Filter by minimum acceptance %. Higher % = easier entry",
+    "apply": "Apply",
+    "filters": {
+      "searchLabel": "Course or program",
+      "acceptanceLabel": "Acceptance comfort zone",
+      "acceptanceLow": "Open to competitive programs",
+      "acceptanceHigh": "Prefer higher acceptance",
+      "acceptanceAny": "Any %"
+    },
+    "acceptanceOptionAny": "Any %",
+    "acceptanceOption50": "50%+",
+    "acceptanceOption60": "60%+",
+    "acceptanceOption70": "70%+",
+    "acceptanceOption80": "80%+",
+    "acceptanceOption90": "90%+"
+  },
+  "courseCard": {
+    "level": "Level",
+    "duration": "Duration",
+    "years": "{count} years",
+    "acceptance": "Acceptance",
+    "tuition": "Tuition",
+    "location": "Location",
+    "intakes": "Intakes",
+    "viewDetails": "View details",
+    "levels": {
+      "bachelor": "Bachelor",
+      "master": "Master",
+      "phd": "Doctorate",
+      "doctorate": "Doctorate",
+      "diploma": "Diploma",
+      "associate": "Associate",
+      "certificate": "Certificate",
+      "foundation": "Foundation"
+    }
+  },
+  "courseDetail": {
+    "actions": {
+      "back": "Back to courses"
+    },
+    "about": {
+      "title": "About the course",
+      "outcomes": "Learning outcomes"
+    },
+    "sections": {
+      "requirements": "Entry requirements",
+      "careers": "Career opportunities"
+    },
+    "keyInfo": {
+      "title": "Key information",
+      "level": "Level",
+      "duration": "Duration",
+      "intakes": "Intakes",
+      "language": "Language",
+      "tuitionPerYear": "Tuition per year",
+      "accreditation": "Accreditation"
+    },
+    "fee": {
+      "title": "Fee Structure Overview",
+      "subtitle": "All costs are shown in Malaysian Ringgit (RM) for international students.",
+      "programCode": "Program Code",
+      "nextIntake": "Next Intake",
+      "semesters": "Semesters",
+      "summary": {
+        "tuitionPerCredit": "Tuition / Credit Hour",
+        "estimatedCost": "Estimated Program Cost",
+        "oneTimeFees": "One-Time Fees",
+        "discounts": "Discounts Available"
+      },
+      "semesterBreakdown": "Semester Breakdown",
+      "semesterLabel": "Semester {index}",
+      "semesterTitle": "Semester {index}",
+      "academicPeriod": "Academic period",
+      "estimatedSemesterCost": "Estimated cost",
+      "creditHours": "Credit hours",
+      "additionalFees": "Additional fees",
+      "oneTimeSectionTitle": "One-Time Fees",
+      "refundable": "Refundable upon completion",
+      "availableDiscounts": "Available Discounts",
+      "discountFallback": "{percentage}% discount",
+      "paymentMethodsTitle": "Payment Methods",
+      "paymentLanguages": {
+        "en": "English",
+        "ar": "Arabic"
+      },
+      "policiesTitle": "Important Notes & Policies",
+      "fields": {
+        "tuition": "Tuition Fee",
+        "library": "Library Services",
+        "studentClub": "Student Club",
+        "ikad": "i-KAD",
+        "visaProcessing": "Visa Processing",
+        "medicalInsurance": "Medical Insurance",
+        "medicalExam": "Medical Examination"
+      }
+    },
+    "shared": {
+      "currency": "RM",
+      "none": "—"
+    }
+  },
+  "applyModal": {
+    "chooseUniversity": "Choose University",
+    "stepIndicator": "Step {current} of {total}",
+    "stepUniversity": "Step {current} of {total}: Select a university to apply to",
+    "stepCourse": "Step {current} of {total}: Select your course",
+    "selectUniversity": "Select university",
+    "selectCourse": "Select course",
+    "selectUniversityError": "Please select a university",
+    "usingAccountPassport": "Using your account passport number",
+    "limitTitle": "Application Limit Reached",
+    "limitMessage": "Maximum active applications reached ({current}/{max}). Please complete or cancel existing applications before creating a new one.",
+    "fieldsRequired": "Please complete all required fields",
+    "paymentStepTitle": "Payment & Review",
+    "paymentStepIndicator": "Step {current} of {total}: Complete payment",
+    "paymentReceiptRequiredTitle": "Payment Receipt Required",
+    "paymentReceiptRequiredDescription": "You must upload your payment receipt before you can submit your application.",
+    "creatingApplication": "Creating Application...",
+    "updatePassport": "Please update your passport number in your profile"
+  },
+  "paymentStep": {
+    "serviceFeeTitle": "Service Fee - $100 USD",
+    "serviceFeeDescription": "We're here to support you every step of the way! This one-time service fee of <strong>$100 USD</strong> covers our comprehensive support services from application to your arrival in Malaysia.",
+    "benefitGuidance": "Complete application guidance and document review",
+    "benefitVisa": "Visa processing assistance and support",
+    "benefitSupport": "Dedicated staff support throughout your journey",
+    "benefitArrival": "Pre-arrival preparation and arrival support",
+    "paymentInfo": "Payment Information",
+    "amountToPay": "Amount to Pay",
+    "accountNumber": "Account Number",
+    "copyAccount": "Copy Account Number",
+    "accountName": "Account Name",
+    "bankName": "Bank Name",
+    "uploadReceipt": "Upload Payment Receipt",
+    "uploadReceiptDescription": "Please upload a clear image or PDF of your payment receipt",
+    "clickToUpload": "Click to upload receipt",
+    "allowedFormats": "PNG, JPG, or PDF (max 10MB)",
+    "yourInformation": "Your Information",
+    "receiptUploaded": "Receipt uploaded successfully",
+    "receiptUploadFailed": "Failed to upload receipt. Please try again.",
+    "fileTooLarge": "File size must be less than 10MB",
+    "invalidFile": "Please upload a PNG, JPG, or PDF file",
+    "loadingAccounts": "Loading..."
+  },
+  "student": {
+    "sidebar": {
+      "overview": "Dashboard",
+      "applications": "Applications",
+      "messages": "Messages",
+      "journey": "Journey"
+    },
+    "layout": {
+      "menu": "Menu"
+    },
+    "dashboard": {
+      "title": "Your Dashboard",
+      "loading": "Loading dashboard data...",
+      "totalApplications": "Total Applications",
+      "activeCount": "{count} active",
+      "moduleDisabled": "Applications module disabled",
+      "pendingDocuments": "Pending Documents",
+      "pendingDocumentsDescription": "Need reupload or rejected",
+      "uploadedDocuments": "Uploaded Documents",
+      "uploadedDocumentsDescription": "Awaiting review",
+      "unreadMessages": "Unread Messages",
+      "unreadMessagesDescription": "From your assigned staff",
+      "applicationsByStatus": "Applications by Status",
+      "noApplicationsYet": "No applications yet.",
+      "browseCoursesCta": "Browse courses",
+      "recentApplications": "Recent Applications",
+      "noRecentApplications": "You don't have any applications yet.",
+      "pendingDocumentsCard": "You have <strong>{count}</strong> document(s) that need to be reuploaded or are rejected. Please review your applications and upload the required documents."
+    },
+    "applications": {
+      "title": "My Applications",
+      "newButton": "New Application",
+      "newApplicationInfoTitle": "New Application",
+      "newApplicationInfoDescription": "To create a new application, please browse courses and use the \"Apply\" button. Payment receipt upload is required.",
+      "empty": "No applications found.",
+      "loading": "Loading applications...",
+      "passport": "Passport:",
+      "assignedStaff": "Assigned Staff:",
+      "notAssigned": "Not assigned",
+      "currentStage": "Current Stage:"
+    },
+    "messages": {
+      "title": "Messages",
+      "description": "Chat messages per application."
+    }
+  },
+  "studentJourney": {
+    "title": "Plan Your Journey",
+    "subtitle": "Compare universities, explore tuition timelines, and understand the full cost of studying in Malaysia before you submit an application.",
+    "filters": {
+      "university": "University",
+      "anyUniversity": "All universities",
+      "search": "Course keyword",
+      "searchPlaceholder": "Search by course name, code, or focus area",
+      "reset": "Reset",
+      "apply": "Apply filters"
+    },
+    "results": {
+      "summary": "{count} course(s) found",
+      "empty": "No courses match your filters yet. Try another university or keyword."
+    },
+    "labels": {
+      "duration": "{value}",
+      "acceptance": "Acceptance {value}%",
+      "installments": "Installments available",
+      "university": "University",
+      "totalFees": "Estimated full tuition"
+    },
+    "timeline": {
+      "title": "Journey timeline",
+      "summary": "{semesters} semester(s)",
+      "semester": "Semester {index}",
+      "unspecifiedSemester": "Semester details coming soon",
+      "estimatedCost": "Estimated investment",
+      "creditHours": "Credit hours",
+      "tuition": "Tuition",
+      "additional": "Additional fees",
+      "oneTime": "One-time fees",
+      "refundable": "Refundable"
+    }
+  },
+  "publicHelp": {
+    "title": "Ask our advisors anything",
+    "subtitle": "Still exploring your options? Send us a question and we’ll connect you with a staff advisor before you create an account.",
+    "form": {
+      "name": "Your name (optional)",
+      "email": "Email (optional)",
+      "whatsapp": "WhatsApp number (optional)",
+      "question": "Your question",
+      "placeholder": "Share what you’d like to achieve, the course you’re considering, or any concerns about studying abroad.",
+      "helper": "Provide one question at a time. We’ll reply within one business day.",
+      "submit": "Send question",
+      "sending": "Sending..."
+    },
+    "tips": {
+      "title": "Quick tips",
+      "item1": "Mention the course or university you’re curious about so we can match you faster.",
+      "item2": "Add your WhatsApp number if you prefer a quick voice note or call.",
+      "item3": "As soon as you’re ready, you can create a free account and start your application in minutes."
+    },
+    "success": {
+      "title": "You’re connected with {name}",
+      "description": "They'll reach out shortly. Feel free to contact them directly as well.",
+      "toast": "Thanks for your question! A staff advisor will follow up soon."
+    },
+    "staff": {
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "noWhatsapp": "WhatsApp number not provided"
+    },
+    "errors": {
+      "generic": "We couldn't send your question. Please refresh and try again."
+    }
+  },
+  "staff": {
+    "layout": {
+      "menu": "Menu"
+    },
+    "sidebar": {
+      "overview": "Overview",
+      "assignments": "Assignments"
+    },
+    "dashboard": {
+      "title": "Staff Dashboard",
+      "loading": "Loading dashboard data...",
+      "totalAssignments": "Total Assignments",
+      "totalAssignmentsHint": "Click to view all",
+      "pendingReviews": "Pending Reviews",
+      "pendingReviewsDescription": "Documents awaiting review",
+      "unreadMessages": "Unread Messages",
+      "unreadMessagesDescription": "New messages from students",
+      "applicationsByStatus": "Applications by Status",
+      "noApplicationsAssigned": "No applications assigned yet",
+      "recentAssignments": "Recent Assignments",
+      "noRecentAssignments": "No recent assignments",
+      "moduleDisabled": "Applications module is disabled"
+    },
+    "assignments": {
+      "title": "My Assignments",
+      "loading": "Loading assignments...",
+      "emptyState": "You don't have any assigned applications yet.",
+      "applicationLabel": "Application #{id}",
+      "stage": "Stage {current}/4",
+      "passport": "Passport:",
+      "currentStage": "Current Stage:"
+    },
+    "commission": {
+      "title": "Commission",
+      "description": "Your points and commission summary."
+    }
+  },
+  "courses": {
+    "viewDetails": "View details"
+  },
+  "applications": {
+    "create": "Create",
+    "uploadStage1": "Upload stage1 doc",
+    "status": "Status",
+    "stage": "Stage"
+  },
+  "statuses": {
+    "draft": "Pending Approval",
+    "active": "Active",
+    "completed": "Completed",
+    "arriving": "Arriving Soon",
+    "arriving_short": "Arriving",
+    "soft_deleted": "Deleted"
+  },
+  "stage": {
+    "labels": {
+      "stage1": "Initial Documents",
+      "stage2": "Visa & EMGS",
+      "stage3": "Visa Entry",
+      "stage4": "Arrival Preparation"
+    },
+    "statuses": {
+      "draft": "In Progress",
+      "submitted": "Under Review",
+      "letter_issued": "Completed",
+      "locked": "Locked"
+    }
+  },
+  "errors": {
+    "required": "This field is required",
+    "email": "Enter a valid email",
+    "phone": "Enter a valid phone",
+    "min8": "Must be at least 8 characters",
+    "passwordMismatch": "Passwords do not match",
+    "selectCourse": "Select a course",
+    "tryAgain": "Something went wrong. Try again."
+  },
+  "applicationDetail": {
+    "back": "Back",
+    "backToApplications": "Back to Applications",
+    "backToAssignments": "Back to Assignments",
+    "title": "Application Details",
+    "loading": "Loading application...",
+    "waiting": {
+      "title": "Waiting for Approval",
+      "pending": "Your payment is being reviewed. A staff member will verify your payment receipt and approve your application soon.",
+      "rejected": "Your payment receipt has been rejected. Please upload a new payment receipt below to resubmit for review.",
+      "default": "Your application is pending approval. A staff member will review and approve it soon.",
+      "payment": "Payment: {status}",
+      "applicationNumber": "Application #{id}",
+      "resubmitTitle": "Resubmit Payment Receipt",
+      "uploadPrompt": "Click to upload new receipt",
+      "uploadHint": "PNG, JPG, or PDF (max 10MB)",
+      "resubmitButton": "Resubmit Payment Receipt",
+      "resubmitting": "Resubmitting...",
+      "backButton": "Back to Applications"
+    },
+    "paymentReview": {
+      "titlePending": "Payment Review Required",
+      "titleRejected": "Payment Review (Rejected - Resubmitted)",
+      "descriptionPending": "Review the payment receipt before approving the application.",
+      "descriptionRejected": "Student has resubmitted a new payment receipt. Please review it.",
+      "receiptTitle": "Payment Receipt",
+      "preview": "Preview Receipt",
+      "amount": "Amount: $100.00 USD",
+      "resubmitted": "⚠️ This is a resubmitted receipt. Please review carefully.",
+      "noReceipt": "No receipt uploaded",
+      "approve": "Approve Payment",
+      "reject": "Reject Payment",
+      "rejectAgain": "Reject Again"
+    },
+    "summary": {
+      "applicationId": "Application #{id}",
+      "fallbackUniversity": "University",
+      "fallbackCourse": "Course",
+      "payment": "Payment: {status}",
+      "stage": "Stage {current}/4",
+      "passport": "Passport:",
+      "assignedStaff": "Assigned Staff:",
+      "currentStage": "Current Stage:",
+      "student": "Student"
+    },
+    "applicationStatuses": {
+      "draft": "Pending Approval",
+      "active": "Active",
+      "completed": "Completed",
+      "arriving": "Arriving Soon"
+    },
+    "paymentStatuses": {
+      "pending": "Pending Review",
+      "approved": "Approved",
+      "rejected": "Rejected"
+    },
+    "stageStatuses": {
+      "draft": "In Progress",
+      "submitted": "Under Review",
+      "approved": "Approved",
+      "letter_issued": "Completed",
+      "locked": "Locked"
+    },
+    "stageDefinitions": {
+      "stage1": {
+        "label": "Stage 1: Initial Documents",
+        "shortLabel": "Initial Documents",
+        "description": "Upload your high school certificate and passport first page."
+      },
+      "stage2": {
+        "label": "Stage 2: Visa & EMGS",
+        "shortLabel": "Visa & EMGS",
+        "description": "Submit visa receipt, full passport, embassy NOC, signed offer letter, and passport photo."
+      },
+      "stage3": {
+        "label": "Stage 3: Visa Entry",
+        "shortLabel": "Visa Entry",
+        "description": "Provide single entry visa payment, passport, bank statement, yellow fever card, and eVAL document."
+      },
+      "stage4": {
+        "label": "Stage 4: Arrival Preparation",
+        "shortLabel": "Arrival Preparation",
+        "description": "Share E-Visa, signed offer letter, annual fee slip, flight ticket, and arrival/accommodation forms."
+      }
+    },
+    "arrival": {
+      "title": "Welcome to Malaysia! 🇲🇾",
+      "subtitle": "Your arrival information and next steps",
+      "pickupTitle": "Airport Pickup Information",
+      "contactName": "Contact Name:",
+      "phone": "Phone:",
+      "whatsapp": "WhatsApp:",
+      "arrivalDate": "Arrival Date:",
+      "flight": "Flight:",
+      "importantTitle": "Important:",
+      "importantNote": "Our team member will be waiting for you at the airport to help you with your arrival. Please contact them using the information above when you arrive.",
+      "nextStepsTitle": "Next Steps After Arrival",
+      "steps": {
+        "hostel": {
+          "title": "Settling Hostel",
+          "body": "After arriving in Malaysia, you will need to settle into your hostel accommodation. This is where you will be staying during your studies.",
+          "listTitle": "What to do:",
+          "list": [
+            "Go to the hostel address provided by the university",
+            "Meet with the hostel manager or administrator",
+            "Complete the check-in process and receive your room key",
+            "Review the hostel rules and regulations",
+            "Set up your room and make it comfortable"
+          ],
+          "important": "Make sure to bring your passport and offer letter when checking in. Keep all your documents safe in a secure place."
+        },
+        "activation": {
+          "title": "Student Activation",
+          "body": "Student activation is the process of registering yourself officially with the university. This makes you an active student at the university.",
+          "listTitle": "What to do:",
+          "list": [
+            "Visit the university's student services office or registration office",
+            "Bring all your documents (passport, offer letter, visa, etc.)",
+            "Complete the student registration form",
+            "Receive your student ID card",
+            "Get access to university systems and online portals",
+            "Set up your student email account"
+          ],
+          "important": "This step is very important. You cannot attend classes or use university facilities until you complete student activation. Make sure to do this as soon as possible after arriving."
+        },
+        "englishTest": {
+          "title": "English Placement Test",
+          "body": "The English Placement Test helps the university understand your English language level. This test decides which English classes you will take.",
+          "listTitle": "What to do:",
+          "list": [
+            "Check the university's schedule for the English placement test dates",
+            "Register for the test at the English language center or online portal",
+            "Prepare for the test by practicing English (reading, writing, listening, speaking)",
+            "Arrive on time on the test day with your student ID and passport",
+            "Complete the test (it usually takes 2-3 hours)",
+            "Wait for your results, which will tell you which English level class you will join"
+          ],
+          "important": "Don't worry if you don't do perfectly. The test is just to find the right level for you. All students must take this test, even if English is your first language. The results help ensure you get the right English support during your studies."
+        }
+      },
+      "pendingInfo": "Arrival information will be provided by staff soon."
+    },
+    "stage": {
+      "approvedTitle": "Stage Approved ✓",
+      "approvedBody": "Your stage has been approved by staff. You will receive the {letterType} letter (Conditional Letter of Offer) within <strong>2 weeks</strong>.",
+      "approvedNote": "Once the staff uploads the {letterType} letter, the next stage will automatically unlock for you to proceed with the next steps.",
+      "approveTitle": "Approve Stage",
+      "approveBody": "All documents have been approved. Click the button below to approve this stage and enable {letterType} letter issuance.",
+      "approveButton": "Approve Stage",
+      "approving": "Approving...",
+      "issueTitle": "Issue {letterType} Letter",
+      "issueBody": "Stage has been approved. You can now upload and issue the {letterType} letter (Conditional Letter of Offer).",
+      "issueButton": "Upload & Issue {letterType}",
+      "issuing": "Issuing...",
+      "selectedFile": "Selected: {name}",
+      "issuedTitle": "{letterType} Letter Issued",
+      "issuedSubtitle": "Issued on {date}",
+      "preview": "Preview",
+      "download": "Download",
+      "finalizeTitle": "Finalize Arrival Information",
+      "finalizeBody": "Stage 4 has been approved. Please provide arrival information and finalize the application. The student will see this information and next steps.",
+      "fields": {
+        "airportContactName": "Airport Contact Name *",
+        "airportContactPhone": "Airport Contact Phone *",
+        "airportContactWhatsapp": "Airport Contact WhatsApp (Optional)",
+        "arrivalDate": "Arrival Date (Optional)",
+        "arrivalFlight": "Arrival Flight (Optional)",
+        "airportContactNamePlaceholder": "Enter contact person name",
+        "airportContactPhonePlaceholder": "Enter phone number",
+        "airportContactWhatsappPlaceholder": "Enter WhatsApp number",
+        "arrivalFlightPlaceholder": "Enter flight number"
+      },
+      "finalizeButton": "Finalize Arrival Information",
+      "finalizing": "Finalizing..."
+    },
+    "documents": {
+      "requiredTitle": "Required Documents",
+      "view": "View",
+      "notUploaded": "Not uploaded",
+      "upload": "Upload",
+      "reupload": "Reupload",
+      "replace": "Replace",
+      "documentsUploadedTitle": "Documents Uploaded",
+      "documentsUploadedBody": "All documents have been uploaded. Staff will review and approve them. Once all documents are approved, the stage will be automatically approved.",
+      "uploadReminder": "Please upload all required documents ({required} required, {uploaded} uploaded)",
+      "paymentApprovalHint": "Payment must be approved before documents can be approved.",
+      "status": {
+        "uploaded": "Uploaded",
+        "under_review": "Under Review",
+        "approved": "Approved",
+        "needs_reupload": "Needs Reupload",
+        "rejected": "Rejected"
+      },
+      "types": {
+        "defaultDescription": "Upload the required document.",
+        "high_school_cert": {
+          "label": "High School Certificate",
+          "description": "Upload your high school certificate (PDF)."
+        },
+        "passport_first_page": {
+          "label": "Passport First Page",
+          "description": "Upload the first page of your passport (PDF or image)."
+        },
+        "visa_receipt": {
+          "label": "Visa Receipt",
+          "description": "Upload your visa application receipt (PDF or image)."
+        },
+        "full_passport_pdf": {
+          "label": "Full Passport PDF",
+          "description": "Upload a full scanned copy of your passport (PDF)."
+        },
+        "embassy_noc_receipt": {
+          "label": "Embassy NOC Receipt",
+          "description": "Upload the embassy certificate NOC receipt."
+        },
+        "signed_offer_letter": {
+          "label": "Signed Offer Letter",
+          "description": "Upload the signed offer letter from Stage 1."
+        },
+        "passport_photo": {
+          "label": "Passport Photo",
+          "description": "Upload a passport photo with a white background."
+        },
+        "single_entry_fee_payment": {
+          "label": "Single Entry Visa Fee Payment",
+          "description": "Upload the single entry visa fee payment receipt."
+        },
+        "bank_statement": {
+          "label": "Bank Statement",
+          "description": "Upload your bank statement (minimum 4 months, parent/guardian account)."
+        },
+        "yellow_fever_card": {
+          "label": "Yellow Fever Card",
+          "description": "Upload your yellow fever vaccination card."
+        },
+        "eval_pdf": {
+          "label": "eVAL PDF",
+          "description": "Upload the eVAL document from Stage 2 (PDF)."
+        },
+        "e_visa_pdf": {
+          "label": "E-Visa PDF",
+          "description": "Upload your E-Visa document (PDF)."
+        },
+        "annual_fee_slip": {
+          "label": "Annual Fee Payment Slip",
+          "description": "Upload the annual fee payment slip."
+        },
+        "one_way_ticket": {
+          "label": "One-way Flight Ticket",
+          "description": "Upload proof of your one-way flight ticket booking."
+        },
+        "airport_form": {
+          "label": "Airport Form",
+          "description": "Upload the completed airport arrival form."
+        },
+        "accommodation_form": {
+          "label": "Accommodation Application Form",
+          "description": "Upload the accommodation application form."
+        },
+        "payment_receipt": {
+          "label": "Service Fee Receipt",
+          "description": "Upload the $100 USD service fee payment receipt."
+        }
+      }
+    },
+    "messages": {
+      "title": "Messages",
+      "refresh": "Refresh messages",
+      "new": "New",
+      "userFallback": "User",
+      "edited": "(edited)",
+      "editTooltip": "Edit message",
+      "deleteTooltip": "Delete message",
+      "saving": "Saving...",
+      "save": "Save",
+      "cancel": "Cancel",
+      "saveHint": "Ctrl+Enter to save",
+      "placeholder": "Type a message...",
+      "send": "Send",
+      "sending": "Sending...",
+      "noMessages": "No messages yet",
+      "startConversation": "Start the conversation"
+    },
+    "modals": {
+      "rejectTitle": "Reject Payment",
+      "rejectReason": "Reason (Optional)",
+      "rejectPlaceholder": "Enter reason for rejection...",
+      "cancel": "Cancel",
+      "rejectButton": "Reject Payment",
+      "rejecting": "Rejecting...",
+      "deleteTitle": "Delete Message",
+      "deleteMessage": "Are you sure you want to delete this message? This action cannot be undone.",
+      "deleteConfirm": "Delete",
+      "deleteCancel": "Cancel"
+    },
+    "toasts": {
+      "loadApplicationFailed": "Failed to load application.",
+      "paymentApproved": "Payment approved successfully! Application is now active.",
+      "paymentApproveFailed": "Failed to approve payment.",
+      "paymentRejected": "Payment rejected.",
+      "paymentRejectFailed": "Failed to reject payment.",
+      "receiptTooLarge": "Receipt file must be smaller than 10MB.",
+      "receiptInvalidType": "Please upload a PNG, JPG, or PDF file.",
+      "receiptUploadSuccess": "Receipt uploaded successfully. Click \"Resubmit Payment Receipt\" to submit.",
+      "receiptUploadFailed": "Failed to upload receipt. Please try again.",
+      "receiptResubmitted": "Payment receipt resubmitted successfully! It will be reviewed by staff.",
+      "receiptResubmitFailed": "Failed to resubmit payment receipt.",
+      "applicationApproved": "Application approved successfully.",
+      "applicationApproveFailed": "Failed to approve application.",
+      "documentStatusUpdated": "Document status updated.",
+      "documentStatusFailed": "Failed to update document status.",
+      "stage1AutoSubmitted": "All initial documents approved! Stage 1 has been automatically submitted. You can now issue the MOL letter.",
+      "documentTooLarge": "File is too large. Maximum allowed size is {max}MB. Your file is {size}MB.",
+      "documentUploadSuccess": "Document uploaded successfully.",
+      "documentUploadFailed": "Failed to upload document.",
+      "stageSubmitted": "Stage submitted for review.",
+      "stageSubmitFailed": "Failed to submit stage.",
+      "stageApproved": "Stage approved successfully. You can now issue the letter.",
+      "stageApproveFailed": "Failed to approve stage.",
+      "letterTooLarge": "File is too large. Maximum allowed size is 10MB. Your file is {size}MB.",
+      "letterIssued": "{letterType} letter issued successfully! The next stage is now unlocked.",
+      "letterIssueFailed": "Failed to issue letter.",
+      "messageSent": "Message sent successfully.",
+      "messageSendFailed": "Failed to send message.",
+      "messageUpdated": "Message updated successfully.",
+      "messageUpdateFailed": "Failed to update message.",
+      "messageDeleted": "Message deleted successfully.",
+      "messageDeleteFailed": "Failed to delete message.",
+      "arrivalMissingFields": "Please fill in all required arrival fields.",
+      "arrivalFinalized": "Arrival information finalized successfully!",
+      "arrivalFinalizeFailed": "Failed to finalize arrival information.",
+      "newMessageSingle": "You have a new message.",
+      "newMessageMultiple": "You have {count} new messages."
+    }
+  },
+  "toasts": {
+    "fieldsRequired": "Please complete all required fields",
+    "limitReached": "Maximum active applications reached ({current}/{max}). Please complete or cancel existing applications before creating a new one.",
+    "failedLoad": "Failed to load data",
+    "failedApplications": "Failed to load applications",
+    "receiptUploaded": "Receipt uploaded successfully",
+    "receiptUploadFailed": "Failed to upload receipt. Please try again.",
+    "copyAccount": "Account number copied to clipboard",
+    "failedCreateApplication": "Failed to create application",
+    "failedLoadDashboard": "Failed to load dashboard"
+  }
+}

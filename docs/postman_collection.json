@@ -1,0 +1,365 @@
+{
+  "info": {
+    "name": "Student Apply Platform - User Management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "f7b6b2a0-3c6c-4f8a-9c8d-7b3af6c0a111"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register Student",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/auth/register",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "register"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test Student\",\n  \"email\": \"student+{{timestamp}}@example.com\",\n  \"password\": \"Password123!\",\n  \"password_confirmation\": \"Password123!\",\n  \"whatsapp\": \"+1234567890\",\n  \"passport_no\": \"P{{timestamp}}\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 201', function () { pm.response.to.have.status(201); });",
+                  "const json = pm.response.json();",
+                  "pm.test('Has token', function () { pm.expect(json.token).to.be.a('string').and.not.empty; });",
+                  "pm.test('Is student user', function () { pm.expect(json.user.role).to.eql('student'); });",
+                  "pm.collectionVariables.set('auth_token', json.token);",
+                  "pm.collectionVariables.set('student_user_id', json.user.id);"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "pm.collectionVariables.set('timestamp', Date.now().toString());"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Login Student",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "login"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"student+{{timestamp}}@example.com\",\n  \"password\": \"Password123!\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+                  "const json = pm.response.json();",
+                  "pm.test('Has token', function () { pm.expect(json.token).to.be.a('string').and.not.empty; });",
+                  "pm.collectionVariables.set('auth_token', json.token);",
+                  "pm.collectionVariables.set('student_user_id', json.user.id);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Me (Student)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{auth_token}}"}
+            ],
+            "url": { "raw": "{{base_url}}/api/auth/me", "host": ["{{base_url}}"], "path": ["api","auth","me"] }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+                  "const json = pm.response.json();",
+                  "pm.test('Has id and email', function () { pm.expect(json).to.have.property('id'); pm.expect(json).to.have.property('email'); });",
+                  "pm.test('Role is student', function () { pm.expect(json.role).to.eql('student'); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Logout (Student)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{auth_token}}"}
+            ],
+            "url": { "raw": "{{base_url}}/api/auth/logout", "host": ["{{base_url}}"], "path": ["api","auth","logout"] }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('OK response', function () { const json = pm.response.json(); pm.expect(json.ok).to.be.true; });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Applications",
+      "item": [
+        {"name":"List My Applications (Set ID)","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{auth_token}}"}],"url":{"raw":"{{base_url}}/api/applications","host":["{{base_url}}"],"path":["api","applications"]}},"event":[{"listen":"test","script":{"exec":["pm.test('200',()=>pm.response.to.have.status(200));","const j=pm.response.json(); const first=(j.data&&j.data[0])||j[0]; if(first&&first.id){ pm.collectionVariables.set('application_id', first.id); }"],"type":"text/javascript"}}]},
+        {"name":"Create Application","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{auth_token}}"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{base_url}}/api/applications","host":["{{base_url}}"],"path":["api","applications"]},"body":{"mode":"raw","raw":"{\n  \"university_id\": {{last_university_id}},\n  \"course_id\": {{last_course_id}},\n  \"passport_no\": \"P{{timestamp}}\"\n}"}},"event":[{"listen":"test","script":{"exec":["pm.test('201',()=>pm.response.to.have.status(201));","const j=pm.response.json(); pm.collectionVariables.set('application_id', j.id || j.data?.id || j.application_id);"]}}]},
+        {"name":"Upload Stage1 Docs","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{auth_token}}"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{base_url}}/api/applications/{{application_id}}/documents","host":["{{base_url}}"],"path":["api","applications","{{application_id}}","documents"]},"body":{"mode":"raw","raw":"{\n  \"stage_key\": \"stage1\",\n  \"doc_type\": \"high_school_cert\",\n  \"file_url\": \"https://files.example.com/hs.pdf\",\n  \"file_type\": \"pdf\"\n}"}}},
+        {"name":"Submit Stage1","request":{"method":"PATCH","header":[{"key":"Authorization","value":"Bearer {{auth_token}}"}],"url":{"raw":"{{base_url}}/api/applications/{{application_id}}/stages/stage1/submit","host":["{{base_url}}"],"path":["api","applications","{{application_id}}","stages","stage1","submit"]}}},
+        {"name":"Staff: Issue MOL","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{base_url}}/api/applications/{{application_id}}/letters","host":["{{base_url}}"],"path":["api","applications","{{application_id}}","letters"]},"body":{"mode":"raw","raw":"{\n  \"type\": \"MOL\",\n  \"file_url\": \"https://files.example.com/mol.pdf\"\n}"}}},
+        {"name":"Get Application","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{auth_token}}"}],"url":{"raw":"{{base_url}}/api/applications/{{application_id}}","host":["{{base_url}}"],"path":["api","applications","{{application_id}}"]}}}
+      ]
+    },
+    {
+      "name": "Commission",
+      "item": [
+        {"name": "Staff: Commission Summary","request": {"method":"GET","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"}],"url":{"raw":"{{base_url}}/api/staff/commission","host":["{{base_url}}"],"path":["api","staff","commission"]}}},
+        {"name": "Admin: List Staff Points","request": {"method":"GET","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"}],"url":{"raw":"{{base_url}}/api/admin/staff/points?released=false","host":["{{base_url}}"],"path":["api","admin","staff","points"],"query":[{"key":"released","value":"false"}]}},"event":[{"listen":"test","script":{"exec":["pm.test('200',()=>pm.response.to.have.status(200));","const j=pm.response.json(); const first=(j.data&&j.data[0])||null; if(first&&first.id){ pm.collectionVariables.set('point_id', first.id); }"],"type":"text/javascript"}}]},
+        {"name": "Admin: Release Point Record","request": {"method":"POST","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"}],"url":{"raw":"{{base_url}}/api/admin/staff/points/{{point_id}}/release","host":["{{base_url}}"],"path":["api","admin","staff","points","{{point_id}}","release"]}}}
+      ]
+    },
+    {
+      "name": "Universities (Public)",
+      "item": [
+        {"name":"List Universities","request":{"method":"GET","url":{"raw":"{{base_url}}/api/universities?course=engineering&min_accept=50&max_accept=99","host":["{{base_url}}"],"path":["api","universities"],"query":[{"key":"course","value":"engineering"},{"key":"min_accept","value":"50"},{"key":"max_accept","value":"99"}]}}},
+        {"name":"Get University","request":{"method":"GET","url":{"raw":"{{base_url}}/api/universities/{{last_university_id}}","host":["{{base_url}}"],"path":["api","universities","{{last_university_id}}"]}}},
+        {"name":"Verify Hidden University","request":{"method":"GET","url":{"raw":"{{base_url}}/api/universities/{{last_university_id}}","host":["{{base_url}}"],"path":["api","universities","{{last_university_id}}"]}},"event":[{"listen":"test","script":{"exec":["pm.test('404 when inactive',()=>pm.response.to.have.status(404));"],"type":"text/javascript"}}]},
+        {"name":"Verify Visible University","request":{"method":"GET","url":{"raw":"{{base_url}}/api/universities/{{last_university_id}}","host":["{{base_url}}"],"path":["api","universities","{{last_university_id}}"]}},"event":[{"listen":"test","script":{"exec":["pm.test('200 when active',()=>pm.response.to.have.status(200));"],"type":"text/javascript"}}]},
+        {"name":"List Courses (Public)","request":{"method":"GET","url":{"raw":"{{base_url}}/api/courses?university_id=1","host":["{{base_url}}"],"path":["api","courses"],"query":[{"key":"university_id","value":"1"}]}}}
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Set Admin Defaults",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/up", "host": ["{{base_url}}"], "path": ["up"] }
+          },
+          "event": [
+            {"listen": "prerequest", "script": {"exec": [
+              "pm.collectionVariables.set('admin_email', 'admin@example.com');",
+              "pm.collectionVariables.set('admin_password', 'AdminPass123!');"
+            ], "type": "text/javascript"}},
+            {"listen": "test", "script": {"exec": [
+              "pm.test('Admin defaults set', function () { pm.expect(pm.collectionVariables.get('admin_email')).to.eql('admin@example.com'); });"
+            ], "type": "text/javascript"}}
+          ]
+        },
+        {
+          "name": "Login Admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": { "raw": "{{base_url}}/api/auth/login", "host": ["{{base_url}}"], "path": ["api","auth","login"] },
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"{{admin_email}}\",\n  \"password\": \"{{admin_password}}\"\n}" }
+          },
+          "event": [
+            {"listen": "test", "script": {"exec": [
+              "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+              "const json = pm.response.json();",
+              "pm.collectionVariables.set('admin_token', json.token);"
+            ], "type": "text/javascript"}}
+          ]
+        },
+        {
+          "name": "Create Staff",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{admin_token}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": { "raw": "{{base_url}}/api/admin/users", "host": ["{{base_url}}"], "path": ["api","admin","users"] },
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Staff One\",\n  \"email\": \"staff+{{timestamp}}@example.com\",\n  \"password\": \"Password123!\",\n  \"whatsapp\": \"+1987654321\",\n  \"role\": \"staff\"\n}" }
+          },
+          "event": [
+            {"listen": "test", "script": {"exec": [
+              "pm.test('Status 201', function () { pm.response.to.have.status(201); });",
+              "const json = pm.response.json();",
+              "pm.collectionVariables.set('staff_user_id', json.id);"
+            ], "type": "text/javascript"}}
+          ]
+        },
+        {
+          "name": "List Staff",
+          "request": {
+            "method": "GET",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{admin_token}}"}
+            ],
+            "url": { "raw": "{{base_url}}/api/admin/users?role=staff", "host": ["{{base_url}}"], "path": ["api","admin","users"], "query": [{"key":"role","value":"staff"}] }
+          },
+          "event": [
+            {"listen": "test", "script": {"exec": [
+              "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+              "const json = pm.response.json();",
+              "pm.test('Has data array', function () { pm.expect(json.data).to.be.an('array'); });"
+            ], "type": "text/javascript"}}
+          ]
+        }
+      ,
+        {
+          "name": "RBAC: List Roles",
+          "request": {"method":"GET","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"}],"url":{"raw":"{{base_url}}/api/admin/roles","host":["{{base_url}}"],"path":["api","admin","roles"]}},
+          "event": [{"listen":"test","script":{"exec":["pm.test('200',()=>pm.response.to.have.status(200));"],"type":"text/javascript"}}]
+        },
+        {
+          "name": "RBAC: Create Role",
+          "request": {"method":"POST","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{base_url}}/api/admin/roles","host":["{{base_url}}"],"path":["api","admin","roles"]},"body":{"mode":"raw","raw":"{\n  \"name\": \"reviewer\"\n}"}},
+          "event": [{"listen":"test","script":{"exec":["pm.test('201',()=>pm.response.to.have.status(201));"],"type":"text/javascript"}}]
+        },
+        {
+          "name": "RBAC: List Permissions",
+          "request": {"method":"GET","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"}],"url":{"raw":"{{base_url}}/api/admin/permissions","host":["{{base_url}}"],"path":["api","admin","permissions"]}},
+          "event": [{"listen":"test","script":{"exec":["pm.test('200',()=>pm.response.to.have.status(200));"],"type":"text/javascript"}}]
+        },
+        {
+          "name": "RBAC: Create Permission",
+          "request": {"method":"POST","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{base_url}}/api/admin/permissions","host":["{{base_url}}"],"path":["api","admin","permissions"]},"body":{"mode":"raw","raw":"{\n  \"name\": \"applications.review\"\n}"}},
+          "event": [{"listen":"test","script":{"exec":["pm.test('201',()=>pm.response.to.have.status(201));"],"type":"text/javascript"}}]
+        },
+        {
+          "name": "RBAC: Attach Permissions To Role",
+          "request": {"method":"POST","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{base_url}}/api/admin/roles/reviewer/permissions","host":["{{base_url}}"],"path":["api","admin","roles","reviewer","permissions"]},"body":{"mode":"raw","raw":"{\n  \"permissions\": [\"applications.review\"]\n}"}},
+          "event": [{"listen":"test","script":{"exec":["pm.test('200',()=>pm.response.to.have.status(200));"],"type":"text/javascript"}}]
+        },
+        {
+          "name": "RBAC: Assign Role To User",
+          "request": {"method":"POST","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{base_url}}/api/admin/users/{{student_user_id}}/roles","host":["{{base_url}}"],"path":["api","admin","users","{{student_user_id}}","roles"]},"body":{"mode":"raw","raw":"{\n  \"role\": \"reviewer\"\n}"}},
+          "event": [{"listen":"test","script":{"exec":["pm.test('200',()=>pm.response.to.have.status(200));"],"type":"text/javascript"}}]
+        },
+        {"name":"Unis: Create University","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{base_url}}/api/admin/universities","host":["{{base_url}}"],"path":["api","admin","universities"]},"body":{"mode":"raw","raw":"{\n  \"name\": \"Future Tech University\",\n  \"country\": \"Malaysia\",\n  \"acceptance_percent\": 75\n}"}},"event":[{"listen":"test","script":{"exec":["pm.test('201',()=>pm.response.to.have.status(201));","const j=pm.response.json(); pm.collectionVariables.set('last_university_id', j.id);"]}}] },
+        {"name":"Unis: List (Admin)","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"}],"url":{"raw":"{{base_url}}/api/admin/universities","host":["{{base_url}}"],"path":["api","admin","universities"]}}},
+        {"name":"Unis: Toggle Active","request":{"method":"PATCH","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{base_url}}/api/admin/universities/{{last_university_id}}","host":["{{base_url}}"],"path":["api","admin","universities","{{last_university_id}}"]},"body":{"mode":"raw","raw":"{\n  \"is_active\": false\n}"}}},
+        {"name":"Unis: Activate","request":{"method":"PATCH","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{base_url}}/api/admin/universities/{{last_university_id}}","host":["{{base_url}}"],"path":["api","admin","universities","{{last_university_id}}"]},"body":{"mode":"raw","raw":"{\n  \"is_active\": true\n}"}}},
+        {"name":"Courses: Create","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{base_url}}/api/admin/courses","host":["{{base_url}}"],"path":["api","admin","courses"]},"body":{"mode":"raw","raw":"{\n  \"university_id\": {{last_university_id}},\n  \"name\": \"BSc Computer Science\",\n  \"code\": \"CS101\",\n  \"level\": \"Bachelor\",\n  \"duration_months\": 36,\n  \"is_active\": true,\n  \"details\": \"Program details and requirements\",\n  \"total_tuition_fees\": 24000.00,\n  \"procedure_fees\": 500.00,\n  \"payment_method\": \"bank_transfer\",\n  \"allow_installments\": true,\n  \"total_years\": 3\n}"}},"event":[{"listen":"test","script":{"exec":["pm.test('201',()=>pm.response.to.have.status(201));","const j=pm.response.json(); pm.collectionVariables.set('last_course_id', j.id);"]}}] },
+        {"name":"Courses: List (Admin)","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"}],"url":{"raw":"{{base_url}}/api/admin/courses?university_id={{last_university_id}}","host":["{{base_url}}"],"path":["api","admin","courses"],"query":[{"key":"university_id","value":"{{last_university_id}}"}]}}},
+        {"name":"Courses: Toggle Active","request":{"method":"PATCH","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{base_url}}/api/admin/courses/{{last_course_id}}","host":["{{base_url}}"],"path":["api","admin","courses","{{last_course_id}}"]},"body":{"mode":"raw","raw":"{\n  \"is_active\": false\n}"}}},
+        {"name":"Courses: Activate","request":{"method":"PATCH","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{base_url}}/api/admin/courses/{{last_course_id}}","host":["{{base_url}}"],"path":["api","admin","courses","{{last_course_id}}"]},"body":{"mode":"raw","raw":"{\n  \"is_active\": true\n}"}}}
+      ]
+    },
+    {
+      "name": "Negative Cases",
+      "item": [
+        {
+          "name": "Register Duplicate Passport",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": { "raw": "{{base_url}}/api/auth/register", "host": ["{{base_url}}"], "path": ["api","auth","register"] },
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Dup Student\",\n  \"email\": \"dup+{{timestamp}}@example.com\",\n  \"password\": \"Password123!\",\n  \"password_confirmation\": \"Password123!\",\n  \"whatsapp\": \"+123\",\n  \"passport_no\": \"P{{timestamp_fixed}}\"\n}" }
+          },
+          "event": [
+            {"listen": "prerequest", "script": {"exec": [
+              "if (!pm.collectionVariables.get('passport_fixed')) { pm.collectionVariables.set('passport_fixed', 'P'+Date.now()); }",
+              "pm.collectionVariables.set('timestamp_fixed', pm.collectionVariables.get('passport_fixed'));"
+            ], "type": "text/javascript"}},
+            {"listen": "test", "script": {"exec": [
+              "if (pm.response.code === 201) { pm.test('First create allowed', function () { pm.response.to.have.status(201); }); } else { pm.test('Second returns 422', function () { pm.response.to.have.status(422); }); }"
+            ], "type": "text/javascript"}}
+          ]
+        },
+        {
+          "name": "Login Wrong Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": { "raw": "{{base_url}}/api/auth/login", "host": ["{{base_url}}"], "path": ["api","auth","login"] },
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"student+{{timestamp}}@example.com\",\n  \"password\": \"WrongPass!\"\n}" }
+          },
+          "event": [
+            {"listen": "test", "script": {"exec": [
+              "pm.test('Returns 422 for invalid credentials', function () { pm.expect([401, 422]).to.include(pm.response.code); });"
+            ], "type": "text/javascript"}}
+          ]
+        },
+        {
+          "name": "Me Without Token",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/api/auth/me", "host": ["{{base_url}}"], "path": ["api","auth","me"] }
+          },
+          "event": [
+            {"listen": "test", "script": {"exec": [
+              "pm.test('Unauthorized', function () { pm.response.to.have.status(401); });"
+            ], "type": "text/javascript"}}
+          ]
+        },
+        {
+          "name": "Admin Route With Student Token",
+          "request": {
+            "method": "GET",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{auth_token}}"}
+            ],
+            "url": { "raw": "{{base_url}}/api/admin/users", "host": ["{{base_url}}"], "path": ["api","admin","users"] }
+          },
+          "event": [
+            {"listen": "test", "script": {"exec": [
+              "pm.test('Forbidden', function () { pm.expect([401,403]).to.include(pm.response.code); });"
+            ], "type": "text/javascript"}}
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "exec": [
+          "pm.request.headers.upsert({ key: 'Accept', value: 'application/json' });"
+        ],
+        "type": "text/javascript"
+      }
+    }
+  ],
+  "variable": [
+    {"key": "base_url", "value": "http://localhost:8000"},
+    {"key": "auth_token", "value": ""},
+    {"key": "admin_token", "value": ""},
+    {"key": "timestamp", "value": ""},
+    {"key": "student_user_id", "value": ""}
+  ]
+}

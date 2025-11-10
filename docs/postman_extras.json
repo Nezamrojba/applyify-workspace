@@ -1,0 +1,21 @@
+{
+  "info": {"name": "Extras - Reassign, Mark Read, Presign", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "event": [{"listen":"prerequest","script":{"type":"text/javascript","exec":["pm.request.headers.upsert({ key: 'Accept', value: 'application/json' });"]}}],
+  "item": [
+    {"name":"Admin: Reassign Application (Random)","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"}],"url":{"raw":"{{base_url}}/api/admin/applications/{{application_id}}/reassign","host":["{{base_url}}"],"path":["api","admin","applications","{{application_id}}","reassign"]}}},
+    {"name":"Admin: Reassign Application (To Staff)","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{admin_token}}"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{base_url}}/api/admin/applications/{{application_id}}/reassign","host":["{{base_url}}"],"path":["api","admin","applications","{{application_id}}","reassign"]},"body":{"mode":"raw","raw":"{\n  \"staff_id\": {{staff_user_id}}\n}"}}},
+    {"name":"Messages: List (Set message_id)","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{auth_token}}"}],"url":{"raw":"{{base_url}}/api/applications/{{application_id}}/messages","host":["{{base_url}}"],"path":["api","applications","{{application_id}}","messages"]}},"event":[{"listen":"test","script":{"exec":["pm.test('200',()=>pm.response.to.have.status(200));","const j=pm.response.json(); if (Array.isArray(j) && j.length>0) pm.collectionVariables.set('message_id', j[0].id);"],"type":"text/javascript"}}]},
+    {"name":"Messages: Mark Read","request":{"method":"PATCH","header":[{"key":"Authorization","value":"Bearer {{auth_token}}"}],"url":{"raw":"{{base_url}}/api/applications/{{application_id}}/messages/{{message_id}}/read","host":["{{base_url}}"],"path":["api","applications","{{application_id}}","messages","{{message_id}}","read"]}}},
+    {"name":"Uploads: Presign","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{auth_token}}"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{base_url}}/api/uploads/presign","host":["{{base_url}}"],"path":["api","uploads","presign"]},"body":{"mode":"raw","raw":"{\n  \"filename\": \"test.pdf\",\n  \"content_type\": \"application/pdf\",\n  \"size_bytes\": 1024\n}"}}},
+    {"name":"Uploads: Local (choose file)","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{auth_token}}"}],"url":{"raw":"{{base_url}}/api/uploads/local","host":["{{base_url}}"],"path":["api","uploads","local"]},"body":{"mode":"formdata","formdata":[{"key":"file","type":"file","src":""}]}},"event":[{"listen":"test","script":{"type":"text/javascript","exec":["pm.test('201',()=>pm.response.to.have.status(201));","const j=pm.response.json(); pm.collectionVariables.set('uploaded_file_url', j.file_url); pm.collectionVariables.set('uploaded_file_type', j.file_type); pm.collectionVariables.set('uploaded_file_size', j.size_bytes);"]}}]},
+    {"name":"Applications: Attach Uploaded Doc","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{auth_token}}"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{base_url}}/api/applications/{{application_id}}/documents","host":["{{base_url}}"],"path":["api","applications","{{application_id}}","documents"]},"body":{"mode":"raw","raw":"{\n  \"stage_key\": \"stage1\",\n  \"doc_type\": \"high_school_cert\",\n  \"file_url\": \"{{uploaded_file_url}}\",\n  \"file_type\": \"{{uploaded_file_type}}\",\n  \"size_bytes\": {{uploaded_file_size}}\n}"}}}
+  ],
+  "variable": [
+    {"key":"base_url","value":"http://localhost:8000"},
+    {"key":"admin_token","value":""},
+    {"key":"auth_token","value":""},
+    {"key":"application_id","value":""},
+    {"key":"message_id","value":""},
+    {"key":"staff_user_id","value":""}
+  ]
+}

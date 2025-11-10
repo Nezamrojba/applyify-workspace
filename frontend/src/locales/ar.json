@@ -1,0 +1,830 @@
+{
+  "app": {
+    "title": "منصة التقديم"
+  },
+  "nav": {
+    "universities": "الجامعات",
+    "applications": "الطلبات",
+    "login": "تسجيل الدخول"
+  },
+  "header": {
+    "admin": "المشرف",
+    "myAccount": "حسابي",
+    "ask": "اسأل مستشاراً"
+  },
+  "common": {
+    "menu": "القائمة",
+    "loading": "جاري التحميل...",
+    "loadingData": "جاري تحميل البيانات...",
+    "refresh": "تحديث",
+    "view": "عرض",
+    "viewAll": "عرض الكل",
+    "viewDetails": "عرض التفاصيل",
+    "browseCourses": "تصفح الدورات",
+    "actionRequired": "إجراء مطلوب",
+    "reviewApplications": "مراجعة الطلبات",
+    "yes": "نعم",
+    "no": "لا",
+    "back": "رجوع",
+    "continue": "متابعة",
+    "continueToPayment": "المتابعة إلى الدفع",
+    "checking": "جاري التحقق...",
+    "confirmCloseReceipt": "لقد قمت برفع إيصال الدفع. هل تريد الإغلاق؟ لن يتم إنشاء طلبك.",
+    "accountNumberCopied": "تم نسخ رقم الحساب",
+    "copy": "نسخ",
+    "remove": "إزالة",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "passport": "رقم الجواز",
+    "student": "طالب",
+    "staff": "موظف",
+    "superAdmin": "مشرف عام",
+    "moduleDisabled": "الوحدة معطلة",
+    "unknown": "غير معروف"
+  },
+  "landing": {
+    "hero": {
+      "badge": "رحلة الدراسة إلى ماليزيا بسهولة",
+      "title": "ابدأ طريقك الذكي للدراسة في ماليزيا معنا",
+      "subtitle": "تعرّف على الجامعات، أنجز كل المتطلبات، ووصل بثقة. نُبقي الطلاب متحمسين والأهل مطمئنين في كل مرحلة.",
+      "ctaPrimary": "استكشف الدليل",
+      "ctaSecondary": "ابدأ التقديم الآن",
+      "stats": {
+        "title": "نسبة الحصول على التأشيرة",
+        "value": "97% نجاح",
+        "subtitle": "بفضل مراجعتنا الكاملة للمستندات"
+      },
+      "snapshot": {
+        "title": "نظرة شاملة على الطلب",
+        "copy": "حالة الدفع، تقدم المراحل، وملاحظات الموظفين تظهر في لوحة واحدة للعائلة والطالب."
+      },
+      "timeline": {
+        "title": "متوسط زمن القبول",
+        "value": "21 يومًا للحصول على عرض جامعة",
+        "tag": "إنجاز سريع"
+      },
+      "support": {
+        "title": "دعم مخصص",
+        "copy": "فريقنا متعدد اللغات يرافق الأسرة والطالب من أول استشارة وحتى الاستقبال في المطار."
+      }
+    },
+    "value": {
+      "badge": "لماذا تختارنا العائلات",
+      "title": "رحلة قبول أذكى للأهالي والطلاب الطموحين",
+      "description": "نجمع بين الخبراء البشر والتقنيات الحديثة ليبقى الطالب متحمسًا، ويطمئن الأهل أن كل شيء يسير كما ينبغي.",
+      "highlights": {
+        "parents": {
+          "title": "مراجعة دقيقة لكل مستند",
+          "copy": "نقسم الرحلة إلى مراحل واضحة بمواعيد نهائية وتنبيهات رفع وملاحظات من الموظفين."
+        },
+        "students": {
+          "title": "توصيات مخصصة لك",
+          "copy": "نساعدك على اختيار التخصصات التي تناسب اهتماماتك وميزانيتك ونسب القبول المتوقعة."
+        },
+        "tracking": {
+          "title": "متابعة لحظية",
+          "copy": "إشعارات داخل المنصة، تنبيهات واتساب، ورسائل بريد بسيطة تُبقي الجميع في الصورة."
+        }
+      }
+    },
+    "catalog": {
+      "badge": "جامعات رائدة مختارة لك",
+      "title": "برامج متنوعة تناسب طموحاتك",
+      "description": "رشّح النتائج حسب نسب القبول، كلمات البحث، والفئات المالية للعثور على البرنامج الأنسب لك ولعائلتك.",
+      "filters": {
+        "title": "حسّن نتائجك",
+        "hint": "ابحث باسم التخصص ثم حرّك شريط نسبة القبول لرؤية الجامعات التي تشعر تجاهها بالثقة.",
+        "empty": "لا توجد برامج مطابقة بعد. جرّب توسيع نطاق نسبة القبول أو مسح حقل البحث."
+      }
+    },
+    "journey": {
+      "badge": "رحلتك مع Applyify",
+      "title": "ثلاث خطوات بسيطة للوصول إلى ماليزيا",
+      "description": "نمذجنا العملية لتجمع بين خبرة المستشارين وسرعة الأتمتة، فتبقى الحماسة مرتفعة والضغط منخفضًا.",
+      "steps": [
+        {
+          "title": "استكشف وقدّم",
+          "copy": "تصفح البرامج المختارة، تحدث مع مستشارينا، وارفع إيصال الخدمة لبدء ملفك فورًا."
+        },
+        {
+          "title": "تابع كل خطوة",
+          "copy": "نراجع مستنداتك، نتواصل معك داخل المنصة، ونرسل تحديثات لحظية للأهل والطالب."
+        },
+        {
+          "title": "وصول مريح وجاهزية للدراسة",
+          "copy": "ترتيب الاستقبال، السكن، والتنبيهات بعد الوصول تضمن لك بداية سلسة من اليوم الأول."
+        }
+      ]
+    },
+    "applySuccessRedirect": "تم إنشاء الطلب بنجاح! سيتم تحويلك إلى تفاصيل الطلب...",
+    "applySuccess": "تم إنشاء الطلب بنجاح! سيتم مراجعة الدفع وإبلاغك حال الموافقة.",
+    "applyError": "تعذّر إنشاء الطلب",
+    "filters": {
+      "anyAcceptance": "أي نسبة",
+      "fiftyPlus": "50% فأكثر",
+      "sixtyPlus": "60% فأكثر",
+      "seventyPlus": "70% فأكثر",
+      "eightyPlus": "80% فأكثر",
+      "ninetyPlus": "90% فأكثر"
+    },
+    "courseBlurb": "{level} • {months} شهر • {name}"
+  },
+  "auth": {
+    "loginTitle": "تسجيل الدخول",
+    "createAccountTitle": "إنشاء حساب",
+    "newHere": "جديد هنا؟ أنشئ حسابًا",
+    "hintPassport": "نحتاج رقم جوازك لإتمام الطلب. معلوماتك آمنة."
+  },
+  "fields": {
+    "name": "الاسم الكامل",
+    "email": "البريد الإلكتروني",
+    "whatsapp": "رقم الواتساب",
+    "passport": "رقم الجواز",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور"
+  },
+  "universities": {
+    "searchCourse": "ابحث عن تخصص",
+    "acceptance": "نسبة القبول",
+    "acceptanceHelp": "رشّح حسب أقل نسبة قبول. النسبة الأعلى تعني قبولًا أسهل.",
+    "apply": "قدّم",
+    "filters": {
+      "searchLabel": "التخصص أو البرنامج",
+      "acceptanceLabel": "نطاق القبول المريح لك",
+      "acceptanceLow": "منفتح على الخيارات التنافسية",
+      "acceptanceHigh": "أفضل نسب القبول المرتفعة",
+      "acceptanceAny": "أي نسبة"
+    },
+    "acceptanceOptionAny": "أي نسبة",
+    "acceptanceOption50": "50% فأكثر",
+    "acceptanceOption60": "60% فأكثر",
+    "acceptanceOption70": "70% فأكثر",
+    "acceptanceOption80": "80% فأكثر",
+    "acceptanceOption90": "90% فأكثر"
+  },
+  "courseCard": {
+    "level": "المستوى",
+    "duration": "المدة",
+    "years": "{count} سنة",
+    "acceptance": "نسبة القبول",
+    "tuition": "الرسوم",
+    "location": "الموقع",
+    "intakes": "المواعيد",
+    "viewDetails": "عرض التفاصيل",
+    "levels": {
+      "bachelor": "بكالوريوس",
+      "master": "ماجستير",
+      "phd": "دكتوراه",
+      "doctorate": "دكتوراه",
+      "diploma": "دبلوم",
+      "associate": "درجة مشاركة",
+      "certificate": "شهادة",
+      "foundation": "برنامج تأسيسي"
+    }
+  },
+  "courseDetail": {
+    "actions": {
+      "back": "العودة إلى التخصصات"
+    },
+    "about": {
+      "title": "عن البرنامج",
+      "outcomes": "مخرجات التعلم"
+    },
+    "sections": {
+      "requirements": "متطلبات الالتحاق",
+      "careers": "فرص العمل المتاحة"
+    },
+    "keyInfo": {
+      "title": "معلومات أساسية",
+      "level": "المستوى",
+      "duration": "المدة",
+      "intakes": "مواعيد الالتحاق",
+      "language": "لغة الدراسة",
+      "tuitionPerYear": "الرسوم لكل سنة",
+      "accreditation": "الاعتماد الأكاديمي"
+    },
+    "fee": {
+      "title": "نظرة عامة على الرسوم",
+      "subtitle": "جميع التكاليف بالرينجيت الماليزي (RM) للطلاب الدوليين.",
+      "programCode": "رمز البرنامج",
+      "nextIntake": "أقرب موعد قبول",
+      "semesters": "عدد الفصول",
+      "summary": {
+        "tuitionPerCredit": "الرسوم لكل ساعة معتمدة",
+        "estimatedCost": "التكلفة التقديرية للبرنامج",
+        "oneTimeFees": "رسوم تدفع مرة واحدة",
+        "discounts": "الخصومات المتاحة"
+      },
+      "semesterBreakdown": "تفاصيل الفصول الدراسية",
+      "semesterLabel": "الفصل {index}",
+      "semesterTitle": "الفصل {index}",
+      "academicPeriod": "المدة الأكاديمية",
+      "estimatedSemesterCost": "التكلفة التقديرية",
+      "creditHours": "الساعات المعتمدة",
+      "additionalFees": "رسوم إضافية",
+      "oneTimeSectionTitle": "رسوم تدفع مرة واحدة",
+      "refundable": "تُرد بعد إتمام البرنامج",
+      "availableDiscounts": "الخصومات المتاحة",
+      "discountFallback": "خصم بنسبة {percentage}%",
+      "paymentMethodsTitle": "طرق الدفع",
+      "paymentLanguages": {
+        "en": "بالإنجليزية",
+        "ar": "بالعربية"
+      },
+      "policiesTitle": "ملاحظات وسياسات مهمة",
+      "fields": {
+        "tuition": "رسوم الدراسة",
+        "library": "خدمات المكتبة",
+        "studentClub": "نادي الطلاب",
+        "ikad": "بطاقة i-KAD",
+        "visaProcessing": "إجراءات التأشيرة",
+        "medicalInsurance": "التأمين الطبي",
+        "medicalExam": "الفحص الطبي"
+      }
+    },
+    "shared": {
+      "currency": "RM",
+      "none": "—"
+    }
+  },
+  "applyModal": {
+    "chooseUniversity": "اختر الجامعة",
+    "stepIndicator": "الخطوة {current} من {total}",
+    "stepUniversity": "الخطوة {current} من {total}: اختر الجامعة التي ترغب بالتقديم لها",
+    "stepCourse": "الخطوة {current} من {total}: اختر تخصصك",
+    "selectUniversity": "اختر الجامعة",
+    "selectCourse": "اختر التخصص",
+    "selectUniversityError": "يرجى اختيار الجامعة",
+    "usingAccountPassport": "يتم استخدام رقم الجواز في حسابك",
+    "limitTitle": "تم بلوغ الحد الأقصى للطلبات",
+    "limitMessage": "تم بلوغ الحد الأقصى للطلبات النشطة ({current}/{max}). يرجى إنهاء الطلبات الحالية أو إلغاؤها قبل إنشاء طلب جديد.",
+    "fieldsRequired": "يرجى إكمال جميع الحقول المطلوبة",
+    "paymentStepTitle": "الدفع والمراجعة",
+    "paymentStepIndicator": "الخطوة {current} من {total}: أتمم الدفع",
+    "paymentReceiptRequiredTitle": "مطلوب إيصال الدفع",
+    "paymentReceiptRequiredDescription": "يجب رفع إيصال الدفع قبل إرسال الطلب.",
+    "creatingApplication": "جاري إنشاء الطلب...",
+    "updatePassport": "يرجى تحديث رقم جوازك في الملف الشخصي"
+  },
+  "paymentStep": {
+    "serviceFeeTitle": "رسوم الخدمة - 100 دولار أمريكي",
+    "serviceFeeDescription": "نرافقك في كل خطوة! تغطي رسوم الخدمة لمرة واحدة وقدرها <strong>100 دولار أمريكي</strong> دعمنا الكامل من تقديم الطلب حتى وصولك إلى ماليزيا.",
+    "benefitGuidance": "إرشاد كامل في التقديم ومراجعة المستندات",
+    "benefitVisa": "مساعدة ودعم في إجراءات التأشيرة",
+    "benefitSupport": "دعم فريق مختص طوال رحلتك",
+    "benefitArrival": "التحضير لما قبل الوصول ودعم الوصول",
+    "paymentInfo": "معلومات الدفع",
+    "amountToPay": "المبلغ المطلوب",
+    "accountNumber": "رقم الحساب",
+    "copyAccount": "نسخ رقم الحساب",
+    "accountName": "اسم الحساب",
+    "bankName": "اسم البنك",
+    "uploadReceipt": "رفع إيصال الدفع",
+    "uploadReceiptDescription": "يرجى رفع صورة واضحة أو ملف PDF لإيصال الدفع",
+    "clickToUpload": "اضغط لرفع الإيصال",
+    "allowedFormats": "PNG أو JPG أو PDF (بحد أقصى 10 ميجابايت)",
+    "yourInformation": "بياناتك",
+    "receiptUploaded": "تم رفع الإيصال بنجاح",
+    "receiptUploadFailed": "تعذر رفع الإيصال. حاول مرة أخرى.",
+    "fileTooLarge": "يجب ألا يتجاوز حجم الملف 10 ميجابايت",
+    "invalidFile": "يرجى رفع ملف PNG أو JPG أو PDF",
+    "loadingAccounts": "جاري التحميل..."
+  },
+  "student": {
+    "sidebar": {
+      "overview": "لوحة التحكم",
+      "applications": "طلباتي",
+      "messages": "الرسائل",
+      "journey": "رحلتي"
+    },
+    "layout": {
+      "menu": "القائمة"
+    },
+    "dashboard": {
+      "title": "لوحة الطالب",
+      "loading": "جاري تحميل بيانات اللوحة...",
+      "totalApplications": "إجمالي الطلبات",
+      "activeCount": "{count} نشط",
+      "moduleDisabled": "وحدة الطلبات معطلة",
+      "pendingDocuments": "مستندات معلّقة",
+      "pendingDocumentsDescription": "بحاجة لإعادة الرفع أو مرفوضة",
+      "uploadedDocuments": "مستندات مرفوعة",
+      "uploadedDocumentsDescription": "بانتظار المراجعة",
+      "unreadMessages": "رسائل غير مقروءة",
+      "unreadMessagesDescription": "من الموظف المتابع لك",
+      "applicationsByStatus": "الطلبات حسب الحالة",
+      "noApplicationsYet": "لا توجد طلبات بعد.",
+      "browseCoursesCta": "تصفح الدورات",
+      "recentApplications": "أحدث الطلبات",
+      "noRecentApplications": "لا يوجد لديك طلبات بعد.",
+      "pendingDocumentsCard": "لديك <strong>{count}</strong> مستند/مستندات بحاجة لإعادة الرفع أو مرفوضة. يرجى مراجعة طلباتك ورفع المستندات المطلوبة."
+    },
+    "applications": {
+      "title": "طلباتي",
+      "newButton": "طلب جديد",
+      "newApplicationInfoTitle": "طلب جديد",
+      "newApplicationInfoDescription": "لإنشاء طلب جديد، يرجى تصفح الدورات والضغط على زر \"قدّم\". رفع إيصال الدفع مطلوب.",
+      "empty": "لا توجد طلبات.",
+      "loading": "جاري تحميل الطلبات...",
+      "passport": "الجواز:",
+      "assignedStaff": "الموظف المتابع:",
+      "notAssigned": "غير محدد",
+      "currentStage": "المرحلة الحالية:"
+    },
+    "messages": {
+      "title": "الرسائل",
+      "description": "محادثات لكل طلب."
+    }
+  },
+  "studentJourney": {
+    "title": "خطط رحلتك الدراسية",
+    "subtitle": "قارن بين الجامعات، واستكشف الجدول الزمني للرسوم، وافهم التكلفة الكاملة للدراسة في ماليزيا قبل تقديم الطلب.",
+    "filters": {
+      "university": "الجامعة",
+      "anyUniversity": "جميع الجامعات",
+      "search": "كلمة بحث عن التخصص",
+      "searchPlaceholder": "ابحث باسم التخصص أو رمزه أو مجال التركيز",
+      "reset": "إعادة تعيين",
+      "apply": "تطبيق الفلاتر"
+    },
+    "results": {
+      "summary": "تم العثور على {count} برنامج",
+      "empty": "لا يوجد تخصصات مطابقة بعد. جرّب جامعة أو كلمة بحث مختلفة."
+    },
+    "labels": {
+      "duration": "{value}",
+      "acceptance": "نسبة القبول {value}٪",
+      "installments": "أقساط متاحة",
+      "university": "الجامعة",
+      "totalFees": "إجمالي الرسوم التقديري"
+    },
+    "timeline": {
+      "title": "الجدول الزمني للرحلة",
+      "summary": "{semesters} فصل/فصول",
+      "semester": "الفصل {index}",
+      "unspecifiedSemester": "سيتم تزويد تفاصيل هذا الفصل لاحقًا",
+      "estimatedCost": "التكلفة التقديرية",
+      "creditHours": "عدد الساعات",
+      "tuition": "الرسوم الدراسية",
+      "additional": "رسوم إضافية",
+      "oneTime": "رسوم لمرة واحدة",
+      "refundable": "قابلة للاسترداد"
+    }
+  },
+  "publicHelp": {
+    "title": "اسأل مستشارينا أي شيء",
+    "subtitle": "ما زلت تستكشف خياراتك؟ أرسل لنا سؤالك وسنوصلك بأحد الموظفين قبل إنشاء حساب.",
+    "form": {
+      "name": "اسمك (اختياري)",
+      "email": "البريد الإلكتروني (اختياري)",
+      "whatsapp": "رقم واتساب (اختياري)",
+      "question": "اكتب سؤالك",
+      "placeholder": "شارك ما تريد تحقيقه، أو التخصص الذي تفكر فيه، أو أي تساؤلات حول الدراسة في الخارج.",
+      "helper": "أرسل سؤالاً واحداً في كل مرة. سنرد عليك خلال يوم عمل واحد.",
+      "submit": "إرسال السؤال",
+      "sending": "جاري الإرسال..."
+    },
+    "tips": {
+      "title": "نصائح سريعة",
+      "item1": "اذكر التخصص أو الجامعة التي تهتم بها لنوصلك بالموظف المناسب بسرعة.",
+      "item2": "أضف رقم واتساب إذا كنت تفضل الرد عبر ملاحظة صوتية أو اتصال سريع.",
+      "item3": "بمجرد أن تكون جاهزاً، يمكنك إنشاء حساب مجاني والبدء في طلبك خلال دقائق."
+    },
+    "success": {
+      "title": "تم ربطك مع {name}",
+      "description": "سيتواصل معك قريباً. يمكنك مراسلته مباشرة أيضاً.",
+      "toast": "شكراً لسؤالك! سيتواصل معك أحد المستشارين قريباً."
+    },
+    "staff": {
+      "email": "البريد الإلكتروني",
+      "whatsapp": "واتساب",
+      "noWhatsapp": "لا يوجد رقم واتساب"
+    },
+    "errors": {
+      "generic": "تعذر إرسال سؤالك. يرجى تحديث الصفحة والمحاولة مرة أخرى."
+    }
+  },
+  "staff": {
+    "layout": {
+      "menu": "القائمة"
+    },
+    "sidebar": {
+      "overview": "الرئيسية",
+      "assignments": "المهام"
+    },
+    "dashboard": {
+      "title": "لوحة الموظف",
+      "loading": "جاري تحميل بيانات اللوحة...",
+      "totalAssignments": "إجمالي المهام",
+      "totalAssignmentsHint": "اضغط لعرض الكل",
+      "pendingReviews": "مراجعات معلّقة",
+      "pendingReviewsDescription": "مستندات بانتظار المراجعة",
+      "unreadMessages": "رسائل غير مقروءة",
+      "unreadMessagesDescription": "رسائل جديدة من الطلاب",
+      "applicationsByStatus": "الطلبات حسب الحالة",
+      "noApplicationsAssigned": "لا توجد طلبات مسندة بعد",
+      "recentAssignments": "أحدث المهام",
+      "noRecentAssignments": "لا توجد مهام حديثة",
+      "moduleDisabled": "وحدة الطلبات معطلة"
+    },
+    "assignments": {
+      "title": "مهامي",
+      "loading": "جاري تحميل المهام...",
+      "emptyState": "لا توجد طلبات مسندة إليك بعد.",
+      "applicationLabel": "الطلب رقم {id}",
+      "stage": "المرحلة {current} من 4",
+      "passport": "الجواز:",
+      "currentStage": "المرحلة الحالية:"
+    },
+    "commission": {
+      "title": "النقاط والعمولات",
+      "description": "ملخص نقاطك والعمولات المرتبطة بها."
+    }
+  },
+  "courses": {
+    "viewDetails": "عرض التفاصيل"
+  },
+  "applications": {
+    "create": "إنشاء",
+    "uploadStage1": "رفع مستند المرحلة 1",
+    "status": "الحالة",
+    "stage": "المرحلة"
+  },
+  "statuses": {
+    "draft": "بانتظار الموافقة",
+    "active": "نشط",
+    "completed": "مكتمل",
+    "arriving": "قيد الوصول",
+    "arriving_short": "قيد الوصول",
+    "soft_deleted": "محذوف"
+  },
+  "stage": {
+    "labels": {
+      "stage1": "المستندات الأولية",
+      "stage2": "التأشيرة وEMGS",
+      "stage3": "دخول التأشيرة",
+      "stage4": "الاستعداد للوصول"
+    },
+    "statuses": {
+      "draft": "قيد التقدم",
+      "submitted": "قيد المراجعة",
+      "letter_issued": "مكتمل",
+      "locked": "مغلق"
+    }
+  },
+  "errors": {
+    "required": "هذا الحقل مطلوب",
+    "email": "أدخل بريدًا صحيحًا",
+    "phone": "أدخل رقمًا صحيحًا",
+    "min8": "يجب ألا يقل عن 8 أحرف",
+    "passwordMismatch": "كلمتا المرور غير متطابقتين",
+    "selectCourse": "اختر التخصص",
+    "tryAgain": "حدث خطأ. حاول مرة أخرى."
+  },
+  "applicationDetail": {
+    "back": "رجوع",
+    "backToApplications": "العودة إلى الطلبات",
+    "backToAssignments": "العودة إلى المهام",
+    "title": "تفاصيل الطلب",
+    "loading": "جاري تحميل الطلب...",
+    "waiting": {
+      "title": "في انتظار الموافقة",
+      "pending": "يتم حاليًا مراجعة دفعتك. سيقوم أحد الموظفين بالتحقق من إيصال الدفع واعتماد طلبك قريبًا.",
+      "rejected": "تم رفض إيصال الدفع الخاص بك. يرجى رفع إيصال جديد أدناه لإعادة الإرسال للمراجعة.",
+      "default": "طلبك قيد الانتظار. سيقوم أحد الموظفين بمراجعته واعتماده قريبًا.",
+      "payment": "الدفع: {status}",
+      "applicationNumber": "الطلب رقم {id}",
+      "resubmitTitle": "إعادة رفع إيصال الدفع",
+      "uploadPrompt": "انقر لرفع إيصال جديد",
+      "uploadHint": "PNG أو JPG أو PDF (بحد أقصى 10 ميجابايت)",
+      "resubmitButton": "إعادة رفع إيصال الدفع",
+      "resubmitting": "جاري الإرسال...",
+      "backButton": "العودة إلى الطلبات"
+    },
+    "paymentReview": {
+      "titlePending": "مراجعة الدفع مطلوبة",
+      "titleRejected": "مراجعة الدفع (تم الرفض - تمت إعادة الإرسال)",
+      "descriptionPending": "راجِع إيصال الدفع قبل اعتماد الطلب.",
+      "descriptionRejected": "قام الطالب بإعادة رفع إيصال دفع جديد. يرجى مراجعته.",
+      "receiptTitle": "إيصال الدفع",
+      "preview": "معاينة الإيصال",
+      "amount": "المبلغ: 100.00 دولار أمريكي",
+      "resubmitted": "⚠️ هذا إيصال معاد رفعه. يرجى مراجعته بعناية.",
+      "noReceipt": "لم يتم رفع إيصال",
+      "approve": "اعتماد الدفع",
+      "reject": "رفض الدفع",
+      "rejectAgain": "رفض مرة أخرى"
+    },
+    "summary": {
+      "applicationId": "الطلب رقم {id}",
+      "fallbackUniversity": "الجامعة",
+      "fallbackCourse": "التخصص",
+      "payment": "الدفع: {status}",
+      "stage": "المرحلة {current}/4",
+      "passport": "جواز السفر:",
+      "assignedStaff": "الموظف المتابع:",
+      "currentStage": "المرحلة الحالية:",
+      "student": "الطالب"
+    },
+    "applicationStatuses": {
+      "draft": "بانتظار الموافقة",
+      "active": "نشط",
+      "completed": "مكتمل",
+      "arriving": "قيد الوصول"
+    },
+    "paymentStatuses": {
+      "pending": "قيد المراجعة",
+      "approved": "معتمد",
+      "rejected": "مرفوض"
+    },
+    "stageStatuses": {
+      "draft": "قيد التنفيذ",
+      "submitted": "قيد المراجعة",
+      "approved": "معتمد",
+      "letter_issued": "مكتمل",
+      "locked": "مغلق"
+    },
+    "stageDefinitions": {
+      "stage1": {
+        "label": "المرحلة 1: المستندات المبدئية",
+        "shortLabel": "المستندات المبدئية",
+        "description": "ارفع شهادة الثانوية ونسخة الصفحة الأولى من جواز السفر."
+      },
+      "stage2": {
+        "label": "المرحلة 2: التأشيرة و EMGS",
+        "shortLabel": "التأشيرة و EMGS",
+        "description": "قدّم إيصال التأشيرة، نسخة الجواز الكاملة، إيصال NOC، خطاب القبول الموقّع، وصورة الجواز."
+      },
+      "stage3": {
+        "label": "المرحلة 3: دخول التأشيرة",
+        "shortLabel": "دخول التأشيرة",
+        "description": "قدّم إيصال التأشيرة، جواز السفر، كشف الحساب البنكي، بطاقة التطعيم، ومستند eVAL."
+      },
+      "stage4": {
+        "label": "المرحلة 4: التحضير للوصول",
+        "shortLabel": "التحضير للوصول",
+        "description": "قدّم نسخة التأشيرة الإلكترونية، خطاب القبول الموقّع، إيصال الرسوم السنوية، تذكرة السفر، ونماذج الوصول والسكن."
+      }
+    },
+    "arrival": {
+      "title": "مرحبًا بك في ماليزيا! 🇲🇾",
+      "subtitle": "معلومات وصولك وخطواتك التالية",
+      "pickupTitle": "معلومات الاستقبال في المطار",
+      "contactName": "اسم جهة الاتصال:",
+      "phone": "الهاتف:",
+      "whatsapp": "واتساب:",
+      "arrivalDate": "تاريخ الوصول:",
+      "flight": "الرحلة:",
+      "importantTitle": "مهم:",
+      "importantNote": "سيكون أحد أعضاء فريقنا في انتظارك في المطار لمساعدتك عند الوصول. يرجى التواصل معه باستخدام المعلومات أعلاه فور وصولك.",
+      "nextStepsTitle": "الخطوات التالية بعد الوصول",
+      "steps": {
+        "hostel": {
+          "title": "الاستقرار في السكن",
+          "body": "بعد وصولك إلى ماليزيا ستحتاج إلى الاستقرار في سكنك. هذا هو مكان إقامتك خلال فترة الدراسة.",
+          "listTitle": "ماذا تفعل:",
+          "list": [
+            "توجّه إلى عنوان السكن الذي وفرته لك الجامعة",
+            "قابل مدير أو مشرف السكن",
+            "أكمل إجراءات التسجيل واستلم مفتاح الغرفة",
+            "اطلع على لوائح وتعليمات السكن",
+            "جهّز غرفتك واجعلها مريحة"
+          ],
+          "important": "تأكد من إحضار جواز سفرك وخطاب القبول عند التسجيل. احفظ مستنداتك في مكان آمن."
+        },
+        "activation": {
+          "title": "تفعيل الطالب",
+          "body": "تفعيل الطالب هو عملية تسجيلك رسميًا في الجامعة، ما يجعلك طالبًا فعالًا في سجلاتها.",
+          "listTitle": "ماذا تفعل:",
+          "list": [
+            "زر مكتب خدمات الطلاب أو مكتب التسجيل في الجامعة",
+            "أحضر جميع مستنداتك (جواز السفر، خطاب القبول، التأشيرة، إلخ)",
+            "أكمل نموذج التسجيل للطلاب",
+            "استلم بطاقة الطالب الجامعية",
+            "احصل على بيانات الدخول إلى أنظمة الجامعة وبواباتها",
+            "فعّل بريدك الإلكتروني الجامعي"
+          ],
+          "important": "هذه الخطوة مهمة جدًا. لن تتمكن من حضور المحاضرات أو استخدام مرافق الجامعة قبل إكمال تفعيل الطالب. احرص على إنهائها فور وصولك."
+        },
+        "englishTest": {
+          "title": "اختبار تحديد مستوى اللغة الإنجليزية",
+          "body": "يساعد اختبار تحديد مستوى اللغة الإنجليزية الجامعة على فهم مستواك اللغوي وتحديد المستوى المناسب لك.",
+          "listTitle": "ماذا تفعل:",
+          "list": [
+            "تفقّد مواعيد اختبار اللغة الإنجليزية المعلنة من الجامعة",
+            "سجّل في الاختبار لدى مركز اللغة الإنجليزية أو عبر البوابة الإلكترونية",
+            "استعد للاختبار بممارسة مهارات اللغة (القراءة، الكتابة، الاستماع، التحدث)",
+            "احضر في الوقت المحدد ومعك بطاقة الطالب والجواز",
+            "أكمل الاختبار (عادة يستغرق من ساعتين إلى ثلاث ساعات)",
+            "انتظر النتائج لمعرفة مستوى الصف الذي ستنضم إليه"
+          ],
+          "important": "لا تقلق إن لم يكن أداؤك مثاليًا. الهدف من الاختبار هو وضعك في المستوى المناسب. جميع الطلاب يؤدون هذا الاختبار حتى وإن كانت الإنجليزية لغتهم الأولى."
+        }
+      },
+      "pendingInfo": "سيقوم الفريق بتوفير معلومات الوصول قريبًا."
+    },
+    "stage": {
+      "approvedTitle": "تم اعتماد المرحلة ✓",
+      "approvedBody": "تم اعتماد هذه المرحلة من قبل الموظفين. ستستلم خطاب {letterType} (خطاب القبول المشروط) خلال <strong>أسبوعين</strong>.",
+      "approvedNote": "بعد أن يرفع الموظف خطاب {letterType} سيتم فتح المرحلة التالية تلقائيًا لتتابع الخطوات.",
+      "approveTitle": "اعتماد المرحلة",
+      "approveBody": "تمت الموافقة على جميع المستندات. اضغط على الزر أدناه لاعتماد هذه المرحلة وتمكين إصدار خطاب {letterType}.",
+      "approveButton": "اعتماد المرحلة",
+      "approving": "جاري الاعتماد...",
+      "issueTitle": "إصدار خطاب {letterType}",
+      "issueBody": "تم اعتماد هذه المرحلة. يمكنك الآن رفع وإصدار خطاب {letterType} (خطاب القبول المشروط).",
+      "issueButton": "رفع وإصدار خطاب {letterType}",
+      "issuing": "جاري الإصدار...",
+      "selectedFile": "الملف المحدد: {name}",
+      "issuedTitle": "تم إصدار خطاب {letterType}",
+      "issuedSubtitle": "تم الإصدار في {date}",
+      "preview": "معاينة",
+      "download": "تحميل",
+      "finalizeTitle": "إكمال معلومات الوصول",
+      "finalizeBody": "تم اعتماد المرحلة الرابعة. يرجى تزويدنا بمعلومات الوصول لإنهاء الطلب. سيتمكن الطالب من رؤية هذه المعلومات والخطوات التالية.",
+      "fields": {
+        "airportContactName": "اسم جهة الاتصال في المطار *",
+        "airportContactPhone": "رقم جهة الاتصال في المطار *",
+        "airportContactWhatsapp": "رقم واتساب جهة الاتصال (اختياري)",
+        "arrivalDate": "تاريخ الوصول (اختياري)",
+        "arrivalFlight": "رقم الرحلة (اختياري)",
+        "airportContactNamePlaceholder": "أدخل اسم جهة الاتصال",
+        "airportContactPhonePlaceholder": "أدخل رقم الهاتف",
+        "airportContactWhatsappPlaceholder": "أدخل رقم الواتساب",
+        "arrivalFlightPlaceholder": "أدخل رقم الرحلة"
+      },
+      "finalizeButton": "إكمال معلومات الوصول",
+      "finalizing": "جاري الإكمال..."
+    },
+    "documents": {
+      "requiredTitle": "المستندات المطلوبة",
+      "view": "عرض",
+      "notUploaded": "لم يتم رفعه",
+      "upload": "رفع",
+      "reupload": "إعادة رفع",
+      "replace": "استبدال",
+      "documentsUploadedTitle": "تم رفع المستندات",
+      "documentsUploadedBody": "تم رفع جميع المستندات. سيقوم الموظفون بمراجعتها واعتمادها. بمجرد اعتمادها سيتم اعتماد المرحلة تلقائيًا.",
+      "uploadReminder": "يرجى رفع جميع المستندات المطلوبة ({required} مطلوب، {uploaded} مرفوع)",
+      "paymentApprovalHint": "يجب اعتماد الدفعة قبل اعتماد المستندات.",
+      "status": {
+        "uploaded": "تم الرفع",
+        "under_review": "قيد المراجعة",
+        "approved": "معتمد",
+        "needs_reupload": "بحاجة لإعادة الرفع",
+        "rejected": "مرفوض"
+      },
+      "types": {
+        "defaultDescription": "قم برفع المستند المطلوب.",
+        "high_school_cert": {
+          "label": "شهادة الثانوية",
+          "description": "ارفع شهادة الثانوية العامة بصيغة PDF."
+        },
+        "passport_first_page": {
+          "label": "الصفحة الأولى من الجواز",
+          "description": "ارفع الصفحة الأولى من جواز سفرك (PDF أو صورة)."
+        },
+        "visa_receipt": {
+          "label": "إيصال طلب التأشيرة",
+          "description": "ارفع إيصال طلب التأشيرة (PDF أو صورة)."
+        },
+        "full_passport_pdf": {
+          "label": "نسخة الجواز الكاملة",
+          "description": "ارفع نسخة ممسوحة ضوئيًا كاملة من جواز السفر (PDF)."
+        },
+        "embassy_noc_receipt": {
+          "label": "إيصال خطاب عدم الممانعة",
+          "description": "ارفع إيصال شهادة عدم الممانعة من السفارة."
+        },
+        "signed_offer_letter": {
+          "label": "خطاب القبول الموقّع",
+          "description": "ارفع خطاب القبول الموقّع من المرحلة الأولى."
+        },
+        "passport_photo": {
+          "label": "صورة جواز السفر",
+          "description": "ارفع صورة جواز بخلفية بيضاء."
+        },
+        "single_entry_fee_payment": {
+          "label": "إيصال رسوم التأشيرة الواحدة",
+          "description": "ارفع إيصال دفع رسوم التأشيرة الواحدة."
+        },
+        "bank_statement": {
+          "label": "كشف الحساب البنكي",
+          "description": "ارفع كشف حساب بنكي لمدة لا تقل عن 4 أشهر (لحساب ولي الأمر)."
+        },
+        "yellow_fever_card": {
+          "label": "بطاقة تطعيم الحمى الصفراء",
+          "description": "ارفع بطاقة التطعيم ضد الحمى الصفراء."
+        },
+        "eval_pdf": {
+          "label": "مستند eVAL",
+          "description": "ارفع مستند eVAL من المرحلة الثانية (PDF)."
+        },
+        "e_visa_pdf": {
+          "label": "التأشيرة الإلكترونية (PDF)",
+          "description": "ارفع نسخة التأشيرة الإلكترونية بصيغة PDF."
+        },
+        "annual_fee_slip": {
+          "label": "إيصال الرسوم السنوية",
+          "description": "ارفع إيصال سداد الرسوم السنوية."
+        },
+        "one_way_ticket": {
+          "label": "تذكرة السفر باتجاه واحد",
+          "description": "ارفع إثبات حجز تذكرة السفر باتجاه واحد."
+        },
+        "airport_form": {
+          "label": "نموذج المطار",
+          "description": "ارفع نموذج الوصول إلى المطار بعد تعبئته."
+        },
+        "accommodation_form": {
+          "label": "نموذج السكن",
+          "description": "ارفع نموذج طلب السكن بعد تعبئته."
+        },
+        "payment_receipt": {
+          "label": "إيصال خدمة المنصة",
+          "description": "ارفع إيصال خدمة المنصة بقيمة 100 دولار أمريكي."
+        }
+      }
+    },
+    "messages": {
+      "title": "الرسائل",
+      "refresh": "تحديث الرسائل",
+      "new": "جديد",
+      "userFallback": "مستخدم",
+      "edited": "(تم التعديل)",
+      "editTooltip": "تعديل الرسالة",
+      "deleteTooltip": "حذف الرسالة",
+      "saving": "جاري الحفظ...",
+      "save": "حفظ",
+      "cancel": "إلغاء",
+      "saveHint": "Ctrl+Enter للحفظ",
+      "placeholder": "اكتب رسالة...",
+      "send": "إرسال",
+      "sending": "جاري الإرسال...",
+      "noMessages": "لا توجد رسائل بعد",
+      "startConversation": "ابدأ المحادثة"
+    },
+    "modals": {
+      "rejectTitle": "رفض الدفعة",
+      "rejectReason": "السبب (اختياري)",
+      "rejectPlaceholder": "أدخل سبب الرفض...",
+      "cancel": "إلغاء",
+      "rejectButton": "رفض الدفعة",
+      "rejecting": "جاري الرفض...",
+      "deleteTitle": "حذف الرسالة",
+      "deleteMessage": "هل أنت متأكد أنك تريد حذف هذه الرسالة؟ هذا الإجراء لا يمكن التراجع عنه.",
+      "deleteConfirm": "حذف",
+      "deleteCancel": "إلغاء"
+    },
+    "toasts": {
+      "loadApplicationFailed": "تعذّر تحميل الطلب.",
+      "paymentApproved": "تم اعتماد الدفعة بنجاح! أصبح الطلب نشطًا الآن.",
+      "paymentApproveFailed": "تعذّر اعتماد الدفعة.",
+      "paymentRejected": "تم رفض الدفعة.",
+      "paymentRejectFailed": "تعذّر رفض الدفعة.",
+      "receiptTooLarge": "يجب ألا يتجاوز حجم الإيصال 10 ميجابايت.",
+      "receiptInvalidType": "يرجى رفع إيصال بصيغة PNG أو JPG أو PDF.",
+      "receiptUploadSuccess": "تم رفع الإيصال بنجاح. اضغط على \"إعادة رفع إيصال الدفع\" للإرسال.",
+      "receiptUploadFailed": "تعذّر رفع الإيصال. حاول مرة أخرى.",
+      "receiptResubmitted": "تمت إعادة رفع إيصال الدفع بنجاح! سيقوم الفريق بمراجعته.",
+      "receiptResubmitFailed": "تعذّر إعادة رفع إيصال الدفع.",
+      "applicationApproved": "تم اعتماد الطلب بنجاح.",
+      "applicationApproveFailed": "تعذّر اعتماد الطلب.",
+      "documentStatusUpdated": "تم تحديث حالة المستند.",
+      "documentStatusFailed": "تعذّر تحديث حالة المستند.",
+      "stage1AutoSubmitted": "تم اعتماد جميع المستندات المبدئية! تم إرسال المرحلة الأولى تلقائيًا ويمكنك الآن إصدار خطاب MOL.",
+      "documentTooLarge": "الملف كبير جدًا. الحد الأقصى المسموح هو {max} ميجابايت، وحجم الملف الحالي {size} ميجابايت.",
+      "documentUploadSuccess": "تم رفع المستند بنجاح.",
+      "documentUploadFailed": "تعذّر رفع المستند.",
+      "stageSubmitted": "تم إرسال المرحلة للمراجعة.",
+      "stageSubmitFailed": "تعذّر إرسال المرحلة.",
+      "stageApproved": "تم اعتماد المرحلة بنجاح. يمكنك الآن إصدار الخطاب.",
+      "stageApproveFailed": "تعذّر اعتماد المرحلة.",
+      "letterTooLarge": "الملف كبير جدًا. الحد الأقصى المسموح هو 10 ميجابايت، وحجم الملف الحالي {size} ميجابايت.",
+      "letterIssued": "تم إصدار خطاب {letterType}! تم فتح المرحلة التالية.",
+      "letterIssueFailed": "تعذّر إصدار الخطاب.",
+      "messageSent": "تم إرسال الرسالة بنجاح.",
+      "messageSendFailed": "تعذّر إرسال الرسالة.",
+      "messageUpdated": "تم تحديث الرسالة بنجاح.",
+      "messageUpdateFailed": "تعذّر تحديث الرسالة.",
+      "messageDeleted": "تم حذف الرسالة بنجاح.",
+      "messageDeleteFailed": "تعذّر حذف الرسالة.",
+      "arrivalMissingFields": "يرجى تعبئة جميع حقول الوصول المطلوبة.",
+      "arrivalFinalized": "تم إكمال معلومات الوصول بنجاح!",
+      "arrivalFinalizeFailed": "تعذّر إكمال معلومات الوصول.",
+      "newMessageSingle": "لديك رسالة جديدة.",
+      "newMessageMultiple": "لديك {count} رسائل جديدة."
+    }
+  },
+  "toasts": {
+    "fieldsRequired": "يرجى إكمال جميع الحقول المطلوبة",
+    "limitReached": "تم بلوغ الحد الأقصى للطلبات النشطة ({current}/{max}). يرجى إنهاء الطلبات الحالية أو إلغاؤها قبل إنشاء طلب جديد.",
+    "failedLoad": "تعذّر تحميل البيانات",
+    "failedApplications": "تعذّر تحميل الطلبات",
+    "receiptUploaded": "تم رفع الإيصال بنجاح",
+    "receiptUploadFailed": "تعذّر رفع الإيصال. حاول مرة أخرى.",
+    "copyAccount": "تم نسخ رقم الحساب",
+    "failedCreateApplication": "تعذّر إنشاء الطلب",
+    "failedLoadDashboard": "تعذّر تحميل لوحة المعلومات"
+  }
+}
