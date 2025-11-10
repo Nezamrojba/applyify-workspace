@@ -17,9 +17,9 @@ COPY . .
 # Install PHP dependencies (further optimisation can run at runtime once env vars exist)
 RUN composer install --no-dev --optimize-autoloader
 
-# Run migrations, seed data, then start the application server
-CMD php artisan migrate --force \
-    && php artisan db:seed --force \
-    && (php artisan storage:link || true) \
-    && php artisan serve --host=0.0.0.0 --port=${PORT:-8000}
+# Ensure startup script is executable
+RUN chmod +x docker/startup.sh
+
+# Run startup script that waits for the database, migrates, seeds, links storage, and starts the server
+CMD ["./docker/startup.sh"]
 
