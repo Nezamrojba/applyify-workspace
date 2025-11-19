@@ -105,6 +105,11 @@ const modules = [
     key: 'modules.audits.enabled',
     label: 'Audit Logs',
     description: 'System audit trail and activity logs'
+  },
+  {
+    key: 'modules.faqs.enabled',
+    label: 'FAQs',
+    description: 'Manage frequently asked questions and assign staff to answer them'
   }
 ]
 

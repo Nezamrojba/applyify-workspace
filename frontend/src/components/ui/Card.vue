@@ -6,7 +6,7 @@
     <div class="p-5">
       <slot />
     </div>
-    <div v-if="$slots.footer" class="p-5 border-t border-black/5">
+    <div v-if="$slots.footer" class="p-5  border-black/5">
       <slot name="footer" />
     </div>
   </div>

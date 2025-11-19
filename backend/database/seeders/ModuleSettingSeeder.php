@@ -21,6 +21,7 @@ class ModuleSettingSeeder extends Seeder
             'modules.commission.enabled' => true,
             'modules.payments.enabled' => true,
             'modules.audits.enabled' => false,
+            'modules.faqs.enabled' => true,
         ];
 
         foreach ($modules as $key => $value) {

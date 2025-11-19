@@ -10,7 +10,15 @@
   "header": {
     "admin": "Admin",
     "myAccount": "My Account",
-    "ask": "Ask an advisor"
+    "ask": "Ask an advisor",
+    "faqs": "FAQs",
+    "profile": "Profile",
+    "logout": "Logout",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "roleAdmin": "Super Admin",
+    "roleStaff": "Staff",
+    "roleStudent": "Student"
   },
   "common": {
     "menu": "Menu",
@@ -44,8 +52,8 @@
   },
   "landing": {
     "hero": {
-      "badge": "Malaysia made simple",
-      "title": "Your guided path to studying in Malaysia starts here",
+      "badge": "Study abroad made simple",
+      "title": "Your guided path to studying abroad starts here",
       "subtitle": "Discover universities, complete every requirement, and land with confidence. We keep students energized and parents reassured the entire way.",
       "ctaPrimary": "Explore the catalog",
       "ctaSecondary": "Start an application",
@@ -66,6 +74,38 @@
       "support": {
         "title": "Dedicated support",
         "copy": "Our multilingual team works with parents and students from the first consultation to the airport pickup."
+      }
+    },
+    "processSteps": {
+      "badge": "Study Process",
+      "title": "Simple Steps to Study Abroad",
+      "subtitle": "A quick guide to your study journey from start to arrival",
+      "step1": {
+        "title": "Initial Application",
+        "description": "Start by submitting basic documents to get initial acceptance",
+        "item1": "High school certificate in English",
+        "item2": "First page of passport"
+      },
+      "step2": {
+        "title": "After Initial Acceptance",
+        "description": "Complete the required procedures and requirements for travel",
+        "item1": "Prepare necessary documents",
+        "item2": "Ensure photo requirements are met",
+        "item3": "Complete required payments"
+      },
+      "step3": {
+        "title": "Getting Your Visa",
+        "description": "Wait for visa approval and complete required documents",
+        "item1": "Submit documents for approval letter",
+        "item2": "Complete entry visa requirements",
+        "item3": "Download the residence app"
+      },
+      "step4": {
+        "title": "Arrival & Settlement",
+        "description": "Prepare for travel and begin your study journey",
+        "item1": "Arrange accommodation and final documents",
+        "item2": "Book travel ticket",
+        "item3": "Airport pickup and start studying"
       }
     },
     "value": {
@@ -116,6 +156,90 @@
         }
       ]
     },
+    "studyProcess": {
+      "title": "Steps to Study in Malaysia",
+      "subtitle": "A comprehensive guide to everything you need to know about studying in Malaysia",
+      "step1": {
+        "title": "Step 1: Initial Submission",
+        "subtitle": "Documents required for initial submission",
+        "documents": {
+          "highSchoolCert": "High school certificate in English",
+          "passportFirstPage": "First page of passport"
+        },
+        "waitingPeriod": "Initial acceptance waiting period: approximately one week"
+      },
+      "step2": {
+        "title": "Step 2: After Initial Acceptance",
+        "subtitle": "Fees required for travel to Malaysia (one-time payment)",
+        "fees": {
+          "registration": "Registration fees",
+          "registrationAmount": "1,060 Malaysian Ringgit",
+          "accommodation": "Accommodation fees",
+          "accommodationAmount": "2,750 Malaysian Ringgit",
+          "embassy": "Sudanese Embassy fees in Malaysia",
+          "embassyAmount": "300 Malaysian Ringgit",
+          "processing": "Processing fees",
+          "processingAmount": "400 Malaysian Ringgit",
+          "total": "Total",
+          "totalAmount": "4,510 Malaysian Ringgit"
+        },
+        "photoRequirements": {
+          "title": "Photo Requirements",
+          "type": "Colored (not black and white)",
+          "background": "Pure white background for complete clarity",
+          "dimensions": "Dimensions: 45 mm height × 35 mm width",
+          "note": "Important note: Photo must be taken at this size directly, not cropped from a larger image"
+        }
+      },
+      "step3": {
+        "title": "Step 3: After Submitting Documents for Visa/VAL",
+        "subtitle": "Waiting for approval letter from Immigration Office and Passport",
+        "valProcess": {
+          "title": "Visa Approval Letter (VAL) Process",
+          "description": "After submitting documents, waiting for the Immigration Office and Passport to issue an approval letter (VAL)",
+          "waitingPeriod": "Expected duration: approximately 1 to 3 weeks"
+        },
+        "afterVal": {
+          "title": "After Receiving VAL",
+          "appDownload": "Download mobile application for accommodation tracking - valid until graduation",
+          "entryVisaDocs": {
+            "title": "Documents/Items required for Malaysia entry visa",
+            "amount": "120 Malaysian Ringgit",
+            "yellowFeverCard": "Yellow Fever card",
+            "bankStatement": "Stamped bank statement for parent or any family member, covering the last 4 months",
+            "waitingPeriod": "Entry visa waiting period: approximately 2 to 3 weeks"
+          }
+        }
+      },
+      "step4": {
+        "title": "Step 4: After Receiving Visa",
+        "subtitle": "Final requirements before travel",
+        "payments": {
+          "firstYear": "First academic year amount: 13,992 Malaysian Ringgit",
+          "remainingYears": "Remaining years paid in installments during the year"
+        },
+        "documentsProvided": {
+          "title": "Documents you will be provided with",
+          "arrivalForm": "Malaysia arrival form",
+          "accommodationForm": "Accommodation form"
+        },
+        "ticket": "One-way ticket only",
+        "accommodation": {
+          "title": "Prepare amount for student accommodation - three options",
+          "options": {
+            "option1": "Garden Plaza / Mutiara Ville",
+            "option1Price": "RM600.00 per month",
+            "option2": "Crystal Serin / Serin Residence",
+            "option2Price": "RM700.00 per month",
+            "option3": "Hyve Soho / Cyber Square",
+            "option3Price": "RM800.00 per month"
+          },
+          "securityDeposit": "Initially pay a two-month security deposit (refundable upon vacating accommodation)",
+          "utilities": "Electricity, water, and internet bills are divided among apartment residents, approximately 100 to 150 Malaysian Ringgit per month",
+          "note": "Note: All these options are close to the university"
+        }
+      }
+    },
     "applySuccessRedirect": "Application created successfully! Redirecting to application details...",
     "applySuccess": "Application created successfully! Your payment is being reviewed. We will notify you once it's approved.",
     "applyError": "Failed to create application",
@@ -128,6 +252,35 @@
       "ninetyPlus": "90%+"
     },
     "courseBlurb": "{level} • {months} months • {name}"
+  },
+  "howItWorks": {
+    "badge": "How It Works",
+    "title": "How Our Application Platform Works",
+    "subtitle": "Simple, clear steps to start your study journey with confidence",
+    "steps": {
+      "step1": {
+        "title": "Explore Programs",
+        "description": "Browse our list of universities and available programs, use filters to find the right program for you based on acceptance rate and budget."
+      },
+      "step2": {
+        "title": "Start Application",
+        "description": "Create an account and fill out the application form with required information, then upload necessary documents and pay the application fee."
+      },
+      "step3": {
+        "title": "Track Progress",
+        "description": "Monitor your application status in real-time, follow review stages, and get updates from our staff via the platform and WhatsApp."
+      },
+      "step4": {
+        "title": "Receive Acceptance & Travel",
+        "description": "After receiving your acceptance letter and visa, we'll help you arrange accommodation and ensure you're ready to arrive and start studying."
+      }
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "description": "Start your study journey today and get full support every step of the way",
+      "buttonPrimary": "Start Application Now",
+      "buttonSecondary": "Ask an Advisor"
+    }
   },
   "auth": {
     "loginTitle": "Login",
@@ -410,7 +563,8 @@
     },
     "sidebar": {
       "overview": "Overview",
-      "assignments": "Assignments"
+      "assignments": "Assignments",
+      "faqs": "FAQs"
     },
     "dashboard": {
       "title": "Staff Dashboard",
@@ -439,6 +593,65 @@
     "commission": {
       "title": "Commission",
       "description": "Your points and commission summary."
+    },
+    "faqs": {
+      "title": "FAQs",
+      "myFaqs": "My Assigned FAQs",
+      "noFaqs": "No FAQs assigned to you yet.",
+      "editTitle": "Edit FAQ",
+      "questionEn": "Question (English)",
+      "questionAr": "Question (Arabic)",
+      "answerEn": "Answer (English)",
+      "answerAr": "Answer (Arabic)",
+      "questionPlaceholderEn": "Enter the question in English",
+      "questionPlaceholderAr": "أدخل السؤال بالعربية",
+      "answerPlaceholderEn": "Enter the answer in English",
+      "answerPlaceholderAr": "أدخل الإجابة بالعربية",
+      "order": "Order",
+      "isActive": "Active",
+      "updated": "FAQ updated successfully"
+    }
+  },
+  "admin": {
+    "sidebar": {
+      "faqs": "FAQs"
+    },
+    "faqs": {
+      "title": "FAQ Management",
+      "list": "FAQ List",
+      "createNew": "Create New FAQ",
+      "noFaqs": "No FAQs created yet.",
+      "assignedStaff": "Assigned Staff",
+      "notAssigned": "Not assigned",
+      "unassign": "Unassign",
+      "selectStaff": "Assign to staff...",
+      "created": "FAQ created successfully",
+      "deleted": "FAQ deleted successfully",
+      "staffAssigned": "Staff assigned successfully",
+      "staffUnassigned": "Staff unassigned successfully",
+      "deleteConfirmTitle": "Delete FAQ",
+      "deleteConfirmMessage": "This will permanently delete the FAQ. This action cannot be undone.",
+      "createTitle": "Create New FAQ",
+      "questionEn": "Question (English)",
+      "questionAr": "Question (Arabic)",
+      "answerEn": "Answer (English)",
+      "answerAr": "Answer (Arabic)",
+      "questionPlaceholderEn": "Enter the question in English",
+      "questionPlaceholderAr": "أدخل السؤال بالعربية",
+      "answerPlaceholderEn": "Enter the answer in English",
+      "answerPlaceholderAr": "أدخل الإجابة بالعربية",
+      "order": "Display Order"
+    }
+  },
+  "faqs": {
+    "badge": "Help Center",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about studying abroad and the application process",
+    "noFaqsAvailable": "No FAQs available at the moment. Please check back later or ask an advisor.",
+    "cta": {
+      "title": "Still have questions?",
+      "description": "Can't find what you're looking for? Reach out to our advisors for personalized assistance.",
+      "button": "Ask an Advisor"
     }
   },
   "courses": {
@@ -513,7 +726,8 @@
       "noReceipt": "No receipt uploaded",
       "approve": "Approve Payment",
       "reject": "Reject Payment",
-      "rejectAgain": "Reject Again"
+      "rejectAgain": "Reject Again",
+      "waitingForResubmission": "Payment was rejected. Waiting for student to resubmit a new receipt."
     },
     "summary": {
       "applicationId": "Application #{id}",
@@ -826,5 +1040,47 @@
     "copyAccount": "Account number copied to clipboard",
     "failedCreateApplication": "Failed to create application",
     "failedLoadDashboard": "Failed to load dashboard"
+  },
+  "howItWorks": {
+    "badge": "How It Works",
+    "title": "How Our Platform Works",
+    "subtitle": "Discover how we guide you through every step of your study abroad journey",
+    "stepLabel": "Step {number}",
+    "steps": {
+      "step1": {
+        "title": "Explore Programs & Universities",
+        "description": "Browse our curated selection of accredited programs and universities. Use advanced search and filter tools to find the program that matches your interests and budget.",
+        "feature1": "Browse hundreds of accredited programs",
+        "feature2": "Filter by major and acceptance rate",
+        "feature3": "Compare programs and universities easily"
+      },
+      "step2": {
+        "title": "Submit Your Application",
+        "description": "Create your account, fill out the application form, and upload all required documents. Our team reviews each application carefully to ensure all requirements are complete.",
+        "feature1": "Simple and quick account creation",
+        "feature2": "Easy document upload",
+        "feature3": "Instant document review"
+      },
+      "step3": {
+        "title": "Track Your Application Progress",
+        "description": "Monitor your application status in real-time. Get instant updates at every stage and communicate directly with our team through the platform.",
+        "feature1": "Comprehensive tracking dashboard",
+        "feature2": "Instant notifications for updates",
+        "feature3": "24/7 support available"
+      },
+      "step4": {
+        "title": "Get Accepted & Travel",
+        "description": "Once you receive acceptance, we help you obtain your visa and arrange accommodation. We accompany you until you successfully arrive at your study destination.",
+        "feature1": "Visa application assistance",
+        "feature2": "Accommodation and pickup arrangement",
+        "feature3": "Continued support after arrival"
+      }
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "description": "Start your study journey today and discover the programs available to you",
+      "primaryButton": "Explore Programs",
+      "secondaryButton": "Ask an Advisor"
+    }
   }
 }

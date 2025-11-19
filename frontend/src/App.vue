@@ -4,7 +4,7 @@
     <div v-if="isAccount" class="flex-1 pb-14">
       <router-view />
     </div>
-    <main v-else class="flex-1 pb-14">
+    <main v-else class="flex-1 pb-5">
       <router-view />
     </main>
     <ToastContainer />

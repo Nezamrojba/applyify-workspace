@@ -66,7 +66,7 @@
       <Card v-for="course in courses" :key="course.id" class="p-5 space-y-5">
         <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
           <div class="space-y-2">
-            <h2 class="text-xl font-semibold text-text">{{ course.name }}</h2>
+            <h2 class="text-xl font-semibold text-text">{{ displayCourseName(course) }}</h2>
             <div class="flex flex-wrap items-center gap-2 text-xs text-muted uppercase tracking-wide">
               <span class="px-2 py-0.5 rounded bg-primary/10 text-primary">{{ t('courseCard.level') }}: {{ levelLabel(course) }}</span>
               <span class="px-2 py-0.5 rounded bg-black/5 text-text">{{ t('studentJourney.labels.duration', { value: formatDuration(course.duration_months) }) }}</span>
@@ -268,6 +268,15 @@ function displayLocation(entity?: UniversityOption) {
     return localized[l] || localized.en || ''
   }
   return ''
+}
+
+function displayCourseName(course?: JourneyCourse) {
+  if (!course) return '—'
+  const i18nName = course.i18n?.name
+  if (!i18nName) return course.name || '—'
+  const l = locale.value as 'en' | 'ar'
+  if (typeof i18nName === 'string') return i18nName
+  return i18nName?.[l] || i18nName?.en || course.name || '—'
 }
 
 function formatDuration(months?: number) {

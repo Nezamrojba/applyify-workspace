@@ -12,6 +12,7 @@ export default {
         muted: 'var(--color-muted)',
         primary: 'var(--color-primary)',
         success: 'var(--color-success)',
+        info: 'var(--color-info)',
         warning: 'var(--color-warning)',
         danger: 'var(--color-danger)'
       },

@@ -58,6 +58,7 @@ const items = computed(() => {
     // Remove commission module completely from staff account
     if (item.to === '/staff/commission') return false
     if ((item.to === '/staff/assignments' || item.to?.startsWith('/staff/assignments')) && !isModuleEnabled('applications')) return false
+    if ((item.to === '/staff/faqs') && !isModuleEnabled('faqs')) return false
     return true
   })
 })

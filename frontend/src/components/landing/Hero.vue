@@ -5,7 +5,7 @@
       <div class="absolute bottom-0 left-20 w-72 h-72 bg-success/10 rounded-full blur-3xl"></div>
     </div>
 
-    <div class="container py-12 lg:py-20 relative">
+    <div class="container py-12 lg:py-12 relative">
       <div class="grid lg:grid-cols-[minmax(0,1fr)_380px] gap-10 items-center">
         <div :class="heroTextClasses">
           <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold">

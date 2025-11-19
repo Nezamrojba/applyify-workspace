@@ -166,6 +166,32 @@ export const adminApi = {
       }>
     ) => request('PATCH', `/api/admin/courses/${id}`, payload),
     delete: (id: number) => request('DELETE', `/api/admin/courses/${id}`)
+  },
+  faqs: {
+    list: () => request('GET', '/api/admin/faqs'),
+    create: (payload: {
+      i18n: {
+        question: { en: string; ar: string }
+        answer: { en: string; ar: string }
+      }
+      order?: number
+      is_active?: boolean
+    }) => request('POST', '/api/admin/faqs', payload),
+    update: (
+      id: number,
+      payload: {
+        i18n: {
+          question: { en: string; ar: string }
+          answer: { en: string; ar: string }
+        }
+        order?: number
+        is_active?: boolean
+      }
+    ) => request('PATCH', `/api/admin/faqs/${id}`, payload),
+    delete: (id: number) => request('DELETE', `/api/admin/faqs/${id}`),
+    assignStaff: (id: number, staffId: number) =>
+      request('POST', `/api/admin/faqs/${id}/assign-staff`, { staff_id: staffId }),
+    unassignStaff: (id: number) => request('POST', `/api/admin/faqs/${id}/unassign-staff`)
   }
 }
 

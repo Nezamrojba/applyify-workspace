@@ -78,7 +78,13 @@ onMounted(async () => {
   university.value = data.university
 })
 
-const title = computed(() => course.value?.name || '')
+const title = computed(() => {
+  const i18nName = course.value?.i18n?.name
+  if (!i18nName) return course.value?.name || ''
+  const l = locale.value as 'en'|'ar'
+  if (typeof i18nName === 'string') return i18nName
+  return i18nName?.[l] || i18nName?.en || course.value?.name || ''
+})
 const blurb = computed(() => course.value?.i18n?.blurb?.[locale.value as 'en'|'ar'] || '')
 
 const years = computed(() => Math.max(1, Math.round(((course.value?.duration_months as number) || 12) / 12)))

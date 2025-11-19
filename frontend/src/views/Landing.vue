@@ -2,7 +2,7 @@
   <div>
     <Hero @explore="scrollToCatalog" @apply="handleOpenApply" />
 
-    <section class="container py-12 lg:py-20">
+    <section class="container py-12 lg:py-12">
       <div class="grid md:grid-cols-2 gap-6 lg:gap-12 items-center">
         <div class="space-y-4">
           <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-primary">
@@ -33,7 +33,9 @@
       </div>
     </section>
 
-    <section ref="catalogSection" class="bg-surface py-12 lg:py-20">
+    <StudyProcessSteps />
+
+    <section ref="catalogSection" class="bg-surface py-12 lg:py-12">
       <div class="container space-y-8">
         <div class="space-y-3 text-center">
           <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-info">
@@ -73,45 +75,9 @@
       </div>
     </section>
 
-    <section class="container py-12 lg:py-20">
-      <div class="space-y-8">
-        <div class="text-center space-y-3">
-          <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-success">
-            {{ t('landing.journey.badge') }}
-          </span>
-          <h2 class="text-2xl lg:text-3xl font-semibold leading-snug text-balance">{{ t('landing.journey.title') }}</h2>
-          <p class="text-sm text-muted max-w-2xl mx-auto">{{ t('landing.journey.description') }}</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-4 lg:gap-6">
-          <div class="rounded-3xl border border-black/5 bg-white p-6 space-y-3">
-            <div class="flex items-center gap-3">
-              <span class="h-10 w-10 rounded-full bg-primary/10 text-primary font-semibold flex items-center justify-center">1</span>
-              <div class="font-semibold text-text">{{ t('landing.journey.steps.0.title') }}</div>
-            </div>
-            <p class="text-xs text-muted leading-5">{{ t('landing.journey.steps.0.copy') }}</p>
-          </div>
-          <div class="rounded-3xl border border-black/5 bg-white p-6 space-y-3">
-            <div class="flex items-center gap-3">
-              <span class="h-10 w-10 rounded-full bg-success/10 text-success font-semibold flex items-center justify-center">2</span>
-              <div class="font-semibold text-text">{{ t('landing.journey.steps.1.title') }}</div>
-            </div>
-            <p class="text-xs text-muted leading-5">{{ t('landing.journey.steps.1.copy') }}</p>
-          </div>
-          <div class="rounded-3xl border border-black/5 bg-white p-6 space-y-3">
-            <div class="flex items-center gap-3">
-              <span class="h-10 w-10 rounded-full bg-info/10 text-info font-semibold flex items-center justify-center">3</span>
-              <div class="font-semibold text-text">{{ t('landing.journey.steps.2.title') }}</div>
-            </div>
-            <p class="text-xs text-muted leading-5">{{ t('landing.journey.steps.2.copy') }}</p>
-          </div>
-        </div>
-    </div>
-  </section>
-
     <AuthModal :open="showAuth" @close="showAuth=false" @authed="onAuthed" @openApply="handleOpenApply" />
-  <ApplyModal :open="showApply" :university="selectedUni" @close="showApply=false" @created="createApp" />
-  <CourseDetailModal :open="showDetails" :course="detailCtx?.course" :university-id="detailCtx?.universityId" @close="showDetails=false" />
+    <ApplyModal :open="showApply" :university="selectedUni" @close="showApply=false" @created="createApp" />
+    <CourseDetailModal :open="showDetails" :course="detailCtx?.course" :university-id="detailCtx?.universityId" @close="showDetails=false" />
   </div>
 </template>
 
@@ -119,6 +85,7 @@
 import { ref, watch, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import Hero from '@/components/landing/Hero.vue'
+import StudyProcessSteps from '@/components/landing/StudyProcessSteps.vue'
 import UniversityFilters from '@/components/universities/UniversityFilters.vue'
 import CourseCard from '@/components/courses/CourseCard.vue'
 import CourseDetailModal from '@/components/courses/CourseDetailModal.vue'
@@ -192,6 +159,16 @@ function onAuthed(){
 }
 
 function handleOpenApply() {
+  // Always check authentication first
+  if (!isAuthed()) {
+    // Store intent to apply without university (general application)
+    localStorage.setItem('pendingApply', JSON.stringify({}))
+    showAuth.value = true
+    pendingApply = true
+    return
+  }
+
+  // User is authenticated, proceed with application
   showAuth.value = false
   try {
     const stored = localStorage.getItem('pendingApply')
@@ -237,7 +214,7 @@ async function createApp(p: { university_id:number; course_id:number; passport_n
       router.push(`/dashboard/applications/${applicationId}`)
     } else {
       toast.success(t('landing.applySuccess') as string)
-    showApply.value = false
+      showApply.value = false
       router.push('/dashboard/applications')
     }
   }catch(e:any){ 
@@ -315,10 +292,10 @@ onMounted(async () => {
         }
         else { 
           showApply.value = true
-        if (cid) {
-          setTimeout(() => {
-            const ev = new CustomEvent('prefill-course', { detail: { courseId: cid } })
-            window.dispatchEvent(ev)
+          if (cid) {
+            setTimeout(() => {
+              const ev = new CustomEvent('prefill-course', { detail: { courseId: cid } })
+              window.dispatchEvent(ev)
             }, 100)
           }
         }

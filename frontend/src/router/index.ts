@@ -24,6 +24,18 @@ const routes = [
     component: () => import('@/views/PreApplyHelp.vue')
   },
   {
+    path: '/how-it-works',
+    component: () => import('@/views/HowItWorks.vue')
+  },
+  {
+    path: '/ask-advisor',
+    component: () => import('@/views/PreApplyHelp.vue')
+  },
+  {
+    path: '/faqs',
+    component: () => import('@/views/Faqs.vue')
+  },
+  {
     path: '/admin',
     component: AdminLayout,
     meta: { admin: true },
@@ -39,6 +51,7 @@ const routes = [
       { path: 'courses/:id/edit', component: () => import('@/views/admin/courses/CourseEdit.vue'), meta: { admin: true, sidebar: false } },
       { path: 'courses/:id/fee-structures', component: () => import('@/views/admin/courses/FeeStructures.vue'), meta: { admin: true, sidebar: false } },
       { path: 'commission', component: () => import('@/views/admin/Commission.vue'), meta: { admin: true, sidebar: { label: 'Commission' } } },
+      { path: 'faqs', component: () => import('@/views/admin/Faqs.vue'), meta: { admin: true, sidebar: { i18nKey: 'admin.sidebar.faqs' } } },
       { path: 'settings', component: () => import('@/views/admin/Settings.vue'), meta: { admin: true, sidebar: { label: 'Settings' } } }
     ]
   },
@@ -49,7 +62,8 @@ const routes = [
     children: [
       { path: '', component: StaffDashboard, meta: { sidebar: { i18nKey: 'staff.sidebar.overview' }, title: 'Staff' } },
       { path: 'assignments', component: () => import('@/views/staff/Assignments.vue'), meta: { staff: true, sidebar: { i18nKey: 'staff.sidebar.assignments' } } },
-      { path: 'assignments/:id', component: () => import('@/views/applications/ApplicationDetail.vue'), meta: { staff: true } }
+      { path: 'assignments/:id', component: () => import('@/views/applications/ApplicationDetail.vue'), meta: { staff: true } },
+      { path: 'faqs', component: () => import('@/views/staff/Faqs.vue'), meta: { staff: true, sidebar: { i18nKey: 'staff.sidebar.faqs' } } }
     ]
   },
   {
@@ -120,6 +134,9 @@ router.beforeEach(async (to) => {
         return { path: '/admin', replace: true }
       }
       if (to.path.startsWith('/admin/commission') && !isModuleEnabled('commission')) {
+        return { path: '/admin', replace: true }
+      }
+      if (to.path.startsWith('/admin/faqs') && !isModuleEnabled('faqs')) {
         return { path: '/admin', replace: true }
       }
     } catch (e) {

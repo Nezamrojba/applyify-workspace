@@ -29,6 +29,9 @@ use App\Presentation\Http\Controllers\Admin\CourseFeeStructureController as Admi
 use App\Presentation\Http\Controllers\Uploads\PresignController;
 use App\Presentation\Http\Controllers\Uploads\LocalUploadController;
 use App\Presentation\Http\Controllers\PublicApi\PreApplicationInquiryController;
+use App\Presentation\Http\Controllers\Admin\FaqController as AdminFaqController;
+use App\Presentation\Http\Controllers\Staff\FaqController as StaffFaqController;
+use App\Presentation\Http\Controllers\PublicApi\FaqController as PublicFaqController;
 
 Route::post('auth/register', [AuthController::class, 'register']);
 Route::post('auth/login', [AuthController::class, 'login']);
@@ -98,6 +101,14 @@ Route::middleware(['auth:sanctum', 'app.role:super_admin'])->group(function () {
     Route::get('admin/courses/{course}/fee-structures/{feeStructure}', [AdminCourseFeeStructureController::class, 'show']);
     Route::patch('admin/courses/{course}/fee-structures/{feeStructure}', [AdminCourseFeeStructureController::class, 'update']);
     Route::delete('admin/courses/{course}/fee-structures/{feeStructure}', [AdminCourseFeeStructureController::class, 'destroy']);
+    
+    // FAQ Management (Super Admin)
+    Route::get('admin/faqs', [AdminFaqController::class, 'index']);
+    Route::post('admin/faqs', [AdminFaqController::class, 'store']);
+    Route::patch('admin/faqs/{faq}', [AdminFaqController::class, 'update']);
+    Route::delete('admin/faqs/{faq}', [AdminFaqController::class, 'destroy']);
+    Route::post('admin/faqs/{faq}/assign-staff', [AdminFaqController::class, 'assignStaff']);
+    Route::post('admin/faqs/{faq}/unassign-staff', [AdminFaqController::class, 'unassignStaff']);
 });
 
 Route::middleware(['auth:sanctum', 'permission:roles.manage'])->group(function () {
@@ -122,11 +133,19 @@ Route::middleware(['auth:sanctum', 'permission:users.manage'])->group(function (
     Route::delete('admin/users/{user}', [\App\Presentation\Http\Controllers\Admin\UserController::class, 'destroy']);
 });
 
+Route::middleware(['auth:sanctum', 'app.role:staff'])->group(function () {
+    // FAQ Management (Staff - Assigned FAQs only)
+    Route::get('staff/faqs', [StaffFaqController::class, 'index']);
+    Route::get('staff/faqs/{faq}', [StaffFaqController::class, 'show']);
+    Route::patch('staff/faqs/{faq}', [StaffFaqController::class, 'update']);
+});
+
 Route::get('universities', [PublicUniversityController::class, 'index']);
 Route::get('universities/{university}', [PublicUniversityController::class, 'show']);
 Route::get('courses', [PublicCourseController::class, 'index']);
 Route::get('courses/{course}', [PublicCourseController::class, 'show']);
 Route::post('pre-application-inquiries', [PreApplicationInquiryController::class, 'store']);
+Route::get('faqs', [PublicFaqController::class, 'index']);
 
 Route::fallback(function () {
     return response()->json(['message' => 'Not Found'], 404);

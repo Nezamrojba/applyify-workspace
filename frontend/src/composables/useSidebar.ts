@@ -23,18 +23,24 @@ export function useSidebar(base: '/admin' | '/staff' | '/dashboard') {
       if (sidebarMeta === false) continue
       let label = ''
       if (sidebarMeta?.i18nKey) {
-        label = t(sidebarMeta.i18nKey)
+        const translated = t(sidebarMeta.i18nKey) as unknown as string
+        label = translated && translated !== sidebarMeta.i18nKey
+          ? translated
+          : (sidebarMeta?.label || (r.meta as any)?.title || r.name || r.path.split('/').pop() || '')
       } else {
         label = sidebarMeta?.label || (r.meta as any)?.title || r.name || r.path.split('/').pop() || ''
       }
       list.push({ to: r.path, label })
     }
     // Always ensure index route appears first
-    const baseLabel = base === '/dashboard'
-      ? t('student.sidebar.overview')
-      : base === '/staff'
-        ? t('staff.sidebar.overview')
-        : 'Overview'
+    let baseLabel: string | any = 'Overview'
+    if (base === '/dashboard') {
+      const translated = t('student.sidebar.overview') as unknown as string
+      baseLabel = translated && translated !== 'student.sidebar.overview' ? translated : 'Overview'
+    } else if (base === '/staff') {
+      const translated = t('staff.sidebar.overview') as unknown as string
+      baseLabel = translated && translated !== 'staff.sidebar.overview' ? translated : 'Overview'
+    }
     list.unshift({ to: base, label: baseLabel })
     return list
   })

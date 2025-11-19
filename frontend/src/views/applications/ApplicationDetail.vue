@@ -113,7 +113,7 @@
         <div class="space-y-4">
           <div class="p-4 rounded-lg bg-white border border-black/10">
             <div class="text-sm font-medium mb-2">{{ t('applicationDetail.paymentReview.receiptTitle') }}</div>
-            <div v-if="application.payment_receipt_url" class="space-y-2">
+            <div v-if="application.payment_status === 'pending' && application.payment_receipt_url" class="space-y-2">
               <button @click="openPaymentReceiptPreview" class="inline-flex items-center gap-2 text-primary hover:underline text-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4">
                   <path fill-rule="evenodd" d="M4.5 3.75a3 3 0 00-3 3v.75h21v-.75a3 3 0 00-3-3h-15z" clip-rule="evenodd" />
@@ -122,17 +122,19 @@
                 {{ t('applicationDetail.paymentReview.preview') }}
               </button>
               <div class="text-xs text-muted">{{ t('applicationDetail.paymentReview.amount') }}</div>
-              <div v-if="application.payment_status === 'rejected'" class="text-xs text-danger mt-2">
-                {{ t('applicationDetail.paymentReview.resubmitted') }}
-              </div>
             </div>
             <div v-else class="text-sm text-muted">{{ t('applicationDetail.paymentReview.noReceipt') }}</div>
           </div>
-          <div class="flex gap-2">
+          <!-- Only show approve/reject buttons when payment is pending and there's a receipt to review -->
+          <div v-if="application.payment_status === 'pending' && application.payment_receipt_url" class="flex gap-2">
             <Button variant="success" size="sm" class="flex-1" @click="handleApprovePayment" :disabled="approvingPayment">{{ t('applicationDetail.paymentReview.approve') }}</Button>
             <Button variant="danger" size="sm" class="flex-1" @click="showRejectModal = true" :disabled="approvingPayment">
-              {{ application.payment_status === 'rejected' ? t('applicationDetail.paymentReview.rejectAgain') : t('applicationDetail.paymentReview.reject') }}
+              {{ t('applicationDetail.paymentReview.reject') }}
             </Button>
+          </div>
+          <!-- Show message when payment is rejected but no new receipt yet -->
+          <div v-else-if="application.payment_status === 'rejected' && !application.payment_receipt_url" class="text-sm text-muted text-center py-2">
+            {{ t('applicationDetail.paymentReview.waitingForResubmission') }}
           </div>
         </div>
       </Card>

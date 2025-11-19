@@ -6,7 +6,7 @@
           <div class="text-sm text-muted font-medium">{{ universityName }}</div>
           <span class="text-xs px-2 py-1 rounded bg-primary/10 text-primary">{{ course.acceptance_percent || acceptance || '-' }}%</span>
         </div>
-        <router-link class="font-medium hover:text-primary" :to="{ path: '/courses/'+course.id }">{{ course.name }}</router-link>
+        <router-link class="font-medium hover:text-primary" :to="{ path: '/courses/'+course.id }">{{ courseName }}</router-link>
       </div>
     </template>
     <template #default>
@@ -15,10 +15,6 @@
           <div class="flex items-center gap-2">
             <span class="text-muted">{{ t('courseCard.level') }}:</span>
             <span class="px-2 py-0.5 rounded bg-black/5 font-medium">{{ levelLabel }}</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="text-muted">{{ t('courseCard.duration') }}:</span>
-            <span class="font-medium">🕒 {{ t('courseCard.years', { count: years }) }}</span>
           </div>
           <div class="flex items-center gap-2">
             <span class="text-muted">{{ t('courseCard.acceptance') }}:</span>
@@ -56,7 +52,13 @@ const { locale, t } = useI18n()
 const { isModuleEnabled } = useModuleStatus()
 
 const applicationsEnabled = computed(() => isModuleEnabled('applications'))
-const years = computed(() => Math.max(1, Math.round((props.course?.duration_months || 12) / 12)))
+const courseName = computed(() => {
+  const i18nName = props.course?.i18n?.name
+  if (!i18nName) return props.course?.name || '—'
+  const l = (locale.value as 'en'|'ar')
+  if (typeof i18nName === 'string') return i18nName
+  return i18nName?.[l] || i18nName?.en || props.course?.name || '—'
+})
 const normalizedLevelKey = computed(() => {
   const raw = (props.course?.level || '').toString().trim().toLowerCase()
   if (!raw) return ''

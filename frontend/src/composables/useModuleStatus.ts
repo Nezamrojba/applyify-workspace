@@ -14,6 +14,7 @@ const MODULE_DEFAULTS: Record<string, boolean> = {
   'modules.commission.enabled': true,
   'modules.payments.enabled': false,
   'modules.audits.enabled': false,
+  'modules.faqs.enabled': true,
 }
 
 const moduleSettings = ref<Record<string, boolean>>({ ...MODULE_DEFAULTS })

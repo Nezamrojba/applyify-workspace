@@ -5,8 +5,8 @@ import ar from '@/locales/ar.json'
 function getInitialLocale() {
   const saved = localStorage.getItem('locale')
   if (saved === 'ar' || saved === 'en') return saved
-  const nav = navigator.language.toLowerCase()
-  return nav.startsWith('ar') ? 'ar' : 'en'
+  // Default to Arabic as per user requirement
+  return 'ar'
 }
 
 export const i18n = createI18n({
